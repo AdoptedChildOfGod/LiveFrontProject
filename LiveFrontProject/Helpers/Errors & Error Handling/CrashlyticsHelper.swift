@@ -6,20 +6,20 @@
 //  Copyright © 2021 DigitalAwesome. All rights reserved.
 //
 
-import FirebaseCrashlytics
+// import FirebaseCrashlytics
 import Foundation
 
 struct CrashlyticsHelper {
     /// Set a value in Crashlytics so that the crashes are associated with helpful key-value pairs of information
-    static func set(_ value: String, for key: String) {
-        Crashlytics.crashlytics().setCustomValue(value, forKey: key)
+    static func set(_: String, for _: String) {
+//        Crashlytics.crashlytics().setCustomValue(value, forKey: key)
     }
 
     /// Print a message and send a record of it to Crashlytics
     static func log(_ message: String = "", _ file: String = #fileID, _ function: String = #function, _ line: Int = #line) {
         let output = "~*~*~*~*~*~* \(message.isEmpty ? "Hi there! " : message)\(message.isEmpty ? "" : ". ")Logged from file \(file) in function \(function) on line \(line) ~*~*~*~*~*~*"
         print(output)
-        Crashlytics.crashlytics().log(output)
+//        Crashlytics.crashlytics().log(output)
     }
 
     /// Print a message and send a record of it to Crashlytics as an error when a variable was unexpectedly nil
@@ -30,7 +30,7 @@ struct CrashlyticsHelper {
     /// Print an error and send a record of it to Crashlytics both as a log and an error
     static func record(_ error: Error, _ file: String = #fileID, _ function: String = #function, _ line: Int = #line) {
         log("ERROR: \(error) - \(error.localizedDescription)", file, function, line)
-        Crashlytics.crashlytics().record(error: error)
+//        Crashlytics.crashlytics().record(error: error)
     }
 
     /// If there's an error, print it and send a record of it to Crashlytics both as a log and an error
