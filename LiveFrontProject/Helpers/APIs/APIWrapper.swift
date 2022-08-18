@@ -10,8 +10,6 @@ protocol APIWrapper: AnyObject {
     func apiRequest<T: Codable, A>(urlComponents: [String], queryItems: [(name: String, value: String)]?, method: HTTPMethod, jsonString: String?, errorCompletion: @escaping ResultCompletionWith<A>, successCompletion: @escaping (T) -> Void)
     func apiRequest<A>(urlComponents: [String], queryItems: [(name: String, value: String)]?, method: HTTPMethod, jsonString: String?, errorCompletion: @escaping ResultCompletionWith<A>, successCompletion: @escaping (Bool) -> Void)
 
-    func uploadImage(_ imageData: Data, imageFieldName: String, urlComponents: [String], _ completion: @escaping ResultCompletionWith<User?>)
-
     func createUrlWithPathComponents(_ components: [String]) -> URL?
     func addQueryItems(to url: URL, _ items: [(name: String, value: String)]) -> URL?
     func createRequest(from url: URL, method: HTTPMethod, authToken: String?) -> URLRequest
@@ -32,7 +30,7 @@ extension APIWrapper {
             guard let self = self else { return errorCompletion(.failure(.unknownError)) }
 
             // Make sure the user is connected to the internet before trying to make an API call
-            guard Reachability().isReachable else { return completion(.failure(.noInternet)) }
+            guard Reachability().isReachable else { return errorCompletion(.failure(.noInternet)) }
 
             // Form the URL request with any path components and query items
             guard var finalURL = self.createUrlWithPathComponents(urlComponents) else { return errorCompletion(.failure(.invalidURL)) }
@@ -68,7 +66,7 @@ extension APIWrapper {
             guard let self = self else { return errorCompletion(.failure(.unknownError)) }
 
             // Make sure the user is connected to the internet before trying to make an API call
-            guard Reachability().isReachable else { return completion(.failure(.noInternet)) }
+            guard Reachability().isReachable else { return errorCompletion(.failure(.noInternet)) }
 
             // Form the URL request with any path components and query items
             guard var finalURL = self.createUrlWithPathComponents(urlComponents) else { return errorCompletion(.failure(.invalidURL)) }
@@ -94,45 +92,6 @@ extension APIWrapper {
                 case let .failure(error):
                     if case .noData = error { return successCompletion(true) }
                     return errorCompletion(.failure(error))
-                }
-            }
-        }
-    }
-
-    /// A function specifically to upload image data as a file
-    func uploadImage(_ imageData: Data, imageFieldName: String, urlComponents: [String], _ completion: @escaping ResultCompletionWith<User?>) {
-        // Run everything on a background thread
-        DispatchQueue.global(qos: .background).async { [weak self] in
-            guard let self = self else { return completion(.failure(.unknownError)) }
-
-            // Make sure the user is connected to the internet before trying to make an API call
-            guard Reachability().isReachable else { return completion(.failure(.noInternet)) }
-
-            // Form the URL request with any path components
-            guard let finalURL = self.createUrlWithPathComponents(urlComponents) else { return completion(.failure(.invalidURL)) }
-
-            // Create the URL request, including the access token
-            guard let authToken = UserDefaults.standard.string(forKey: .accessToken) else { return completion(.failure(.expiredToken)) }
-            var request = self.createRequest(from: finalURL, method: HTTPMethod.post, authToken: authToken)
-
-            // The set up specific for uploading an image file
-            let boundary = "Boundary-\(NSUUID().uuidString)"
-            request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
-            let body = NSMutableData()
-            body.append(NSString(format: "\r\n--%@\r\n", boundary).data(using: String.Encoding.utf8.rawValue)!)
-            body.append(NSString(format: "Content-Disposition: form-data; name=\"\(imageFieldName)\"; filename=\"testfromios.jpg\"\r\n" as NSString).data(using: String.Encoding.utf8.rawValue)!)
-            body.append(NSString(format: "Content-Type: application/octet-stream\r\n\r\n").data(using: String.Encoding.utf8.rawValue)!)
-            body.append(imageData)
-            body.append(NSString(format: "\r\n--%@\r\n", boundary).data(using: String.Encoding.utf8.rawValue)!)
-            request.httpBody = body as Data
-
-            // Send the API request to the server
-            self.sendAPI(request) { (result: Result<APIDataModel<User, Empty>, CustomError>) in
-                switch result {
-                case let .success(userData):
-                    return completion(.success(User(from: userData)))
-                case let .failure(error):
-                    return completion(.failure(error))
                 }
             }
         }
@@ -206,12 +165,11 @@ extension APIWrapper {
                 self?.record(error, fromRequest: request, with: data, completion: completion)
                 return
             }
-            
+
             // Create the decoder
             let decoder = JSONDecoder()
             decoder.keyDecodingStrategy = .convertFromSnakeCase
             decoder.dateDecodingStrategy = .iso8601
-            
 
             // Get the status code of the response
             guard let statusCode = (response as? HTTPURLResponse)?.statusCode else {
@@ -231,9 +189,11 @@ extension APIWrapper {
                 // Try to parse any error messages received from the server
                 if let data = data {
                     do {
-                        let apiModel = try decoder.decode(APIModel<String?>.self, from: data)
-                        guard let errorMessage = apiModel.errorInfo?.errorMessage else { return completion(.failure(.serverError)) }
-                        self?.record(CustomError.serverMessage(errorMessage), fromRequest: request, with: data, completion: completion)
+                        // TODO: -
+//                        let apiModel = try decoder.decode(APIModel<String?>.self, from: data)
+//                        guard let errorMessage = apiModel.errorInfo?.errorMessage else { return completion(.failure(.serverError)) }
+//                        self?.record(CustomError.serverMessage(errorMessage), fromRequest: request, with: data, completion: completion)
+                        self?.record(CustomError.serverError, fromRequest: request, with: data, completion: completion)
                     } catch {
                         // This shouldn't happen
                         self?.record(CustomError.serverError, fromRequest: request, with: data, completion: completion)

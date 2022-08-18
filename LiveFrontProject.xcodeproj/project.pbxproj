@@ -34,6 +34,11 @@
 		40F795FF28AF000F009E26AA /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40F795FE28AF000F009E26AA /* Colors.xcassets */; };
 		40F7960228AF00E7009E26AA /* NoInternetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F7960128AF00E7009E26AA /* NoInternetViewController.swift */; };
 		40F7960428AF00F1009E26AA /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F7960328AF00F1009E26AA /* BaseViewController.swift */; };
+		40F7960828AF03BB009E26AA /* FontNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F7960728AF03BB009E26AA /* FontNames.swift */; };
+		40F7960A28AF03D0009E26AA /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F7960928AF03D0009E26AA /* String.swift */; };
+		40F7960C28AF03E7009E26AA /* APIDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F7960B28AF03E7009E26AA /* APIDataModel.swift */; };
+		40F7960E28AF052F009E26AA /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F7960D28AF052F009E26AA /* Collection.swift */; };
+		40FD429E28B00D690091C2EF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FD429D28B00D690091C2EF /* MainViewController.swift */; };
 		D1B7924BE606DAA799591937 /* Pods_LiveFrontProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D746D5ED570BB803C8C045B4 /* Pods_LiveFrontProject.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +72,11 @@
 		40F795FE28AF000F009E26AA /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		40F7960128AF00E7009E26AA /* NoInternetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoInternetViewController.swift; sourceTree = "<group>"; };
 		40F7960328AF00F1009E26AA /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		40F7960728AF03BB009E26AA /* FontNames.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontNames.swift; sourceTree = "<group>"; };
+		40F7960928AF03D0009E26AA /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		40F7960B28AF03E7009E26AA /* APIDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIDataModel.swift; sourceTree = "<group>"; };
+		40F7960D28AF052F009E26AA /* Collection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
+		40FD429D28B00D690091C2EF /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D746D5ED570BB803C8C045B4 /* Pods_LiveFrontProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LiveFrontProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE642FBC5098EC2EEF7DFB3F /* Pods-LiveFrontProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiveFrontProject.release.xcconfig"; path = "Target Support Files/Pods-LiveFrontProject/Pods-LiveFrontProject.release.xcconfig"; sourceTree = "<group>"; };
 		F2A62B330FE91E7AD61AC5C9 /* Pods-LiveFrontProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiveFrontProject.debug.xcconfig"; path = "Target Support Files/Pods-LiveFrontProject/Pods-LiveFrontProject.debug.xcconfig"; sourceTree = "<group>"; };
@@ -119,6 +129,7 @@
 				40F795BE28AEFE0E009E26AA /* Model Controllers */,
 				40F795BC28AEFDE2009E26AA /* Helpers */,
 				40F795BA28AEFDD5009E26AA /* Resources */,
+				40F7960628AF039B009E26AA /* Assets */,
 			);
 			path = LiveFrontProject;
 			sourceTree = "<group>";
@@ -129,8 +140,6 @@
 				40F795C828AEFE7D009E26AA /* AppDelegate.swift */,
 				40F795CA28AEFE86009E26AA /* Coordinator.swift */,
 				40F795B428AEFC91009E26AA /* Info.plist */,
-				40F795FE28AF000F009E26AA /* Colors.xcassets */,
-				40F795F828AEFF73009E26AA /* Assets.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -190,6 +199,7 @@
 		40F795C228AEFE26009E26AA /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				40FD429D28B00D690091C2EF /* MainViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -197,6 +207,7 @@
 		40F795C328AEFE3E009E26AA /* APIs */ = {
 			isa = PBXGroup;
 			children = (
+				40F7960B28AF03E7009E26AA /* APIDataModel.swift */,
 				40F795CD28AEFEA0009E26AA /* APIStrings.swift */,
 				40F795CE28AEFEA0009E26AA /* APIWrapper.swift */,
 				40F795CC28AEFEA0009E26AA /* Reachability.swift */,
@@ -236,8 +247,8 @@
 		40F795C728AEFE5A009E26AA /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				40F795FC28AF0006009E26AA /* UIColor.swift */,
-				40F795FA28AEFFF0009E26AA /* UIImage.swift */,
+				40F7960D28AF052F009E26AA /* Collection.swift */,
+				40F7960928AF03D0009E26AA /* String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -263,6 +274,18 @@
 				40F7960128AF00E7009E26AA /* NoInternetViewController.swift */,
 			);
 			path = Misc;
+			sourceTree = "<group>";
+		};
+		40F7960628AF039B009E26AA /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				40F7960728AF03BB009E26AA /* FontNames.swift */,
+				40F795FC28AF0006009E26AA /* UIColor.swift */,
+				40F795FE28AF000F009E26AA /* Colors.xcassets */,
+				40F795FA28AEFFF0009E26AA /* UIImage.swift */,
+				40F795F828AEFF73009E26AA /* Assets.xcassets */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		7D0F08032531BBAE5FE8DDCB /* Pods */ = {
@@ -393,9 +416,14 @@
 				40F795E128AEFEBD009E26AA /* Toast.swift in Sources */,
 				40F795FB28AEFFF1009E26AA /* UIImage.swift in Sources */,
 				40F795D728AEFEA6009E26AA /* Notifications.swift in Sources */,
+				40F7960A28AF03D0009E26AA /* String.swift in Sources */,
 				40F795F028AEFEE4009E26AA /* UIStackView.swift in Sources */,
 				40F795D628AEFEA6009E26AA /* MagicStrings.swift in Sources */,
+				40F7960C28AF03E7009E26AA /* APIDataModel.swift in Sources */,
+				40F7960828AF03BB009E26AA /* FontNames.swift in Sources */,
 				40F795CB28AEFE86009E26AA /* Coordinator.swift in Sources */,
+				40FD429E28B00D690091C2EF /* MainViewController.swift in Sources */,
+				40F7960E28AF052F009E26AA /* Collection.swift in Sources */,
 				40F7960228AF00E7009E26AA /* NoInternetViewController.swift in Sources */,
 				40F795E028AEFEBD009E26AA /* LoadingIcon.swift in Sources */,
 				40F795F228AEFEE4009E26AA /* UIButton.swift in Sources */,

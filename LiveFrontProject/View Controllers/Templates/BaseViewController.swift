@@ -50,23 +50,6 @@ class BaseViewController: UIViewController {
 
 extension UIViewController {
     /// Print, log, and display an error
-    func recordCustom(_ error: CustomError, _ file: String = #fileID, _ function: String = #function, _ line: Int = #line) {
-        if case .expiredToken = error {
-            // If the authorization token has expired, direct the user back to the login page
-            presentAlert(title: .expired, message: .expiredFull, dismissButtonText: .ok) {
-                if let baseVC = self as? BaseViewController {
-                    baseVC.coordinator?.goBackToInitialViewController()
-                }
-            }
-        } else if case .noInternet = error {
-            if let baseVC = (self as? BaseViewController) { baseVC.coordinator?.showModally(NoInternetViewController(), from: self)
-            } else { presentInternetAlert() }
-        } else {
-            // Otherwise, print, log, and display the error
-            record(error, file, function, line)
-        }
-    }
-
     func record(_ error: Error, _ file: String = #fileID, _ function: String = #function, _ line: Int = #line) {
         // Print, log, and display the error
         CrashlyticsHelper.record(error, file, function, line)
@@ -88,7 +71,7 @@ extension UIViewController {
                     // Show the alert only if the parameter is true and the view is visible
                     let isVisible = (self?.viewIfLoaded?.window != nil)
                     if showAlert, isVisible {
-                        self?.recordCustom(error, file, function, line)
+                        self?.record(error, file, function, line)
                     } else {
                         self?.showToast(message: error.localizedDescription)
                         CrashlyticsHelper.record(error, file, function, line)
@@ -113,7 +96,7 @@ extension UIViewController {
                     // Show the alert only if the parameter is true and the view is visible
                     let isVisible = (self?.viewIfLoaded?.window != nil)
                     if showAlert, isVisible {
-                        self?.recordCustom(error, file, function, line)
+                        self?.record(error, file, function, line)
                     } else {
                         self?.showToast(message: error.localizedDescription)
                         CrashlyticsHelper.record(error, file, function, line)

@@ -32,20 +32,7 @@ class Coordinator {
 
     /// Start the coordinator by going to the initial view
     func start(with initialVC: BaseViewController? = nil) {
-        goTo(initialVC ?? SplashViewController())
-    }
-
-    /// Go to the home page of the app (the first view after auth is completed)
-    func goToHomeView() {
-        let welcomeVC = WelcomeViewController()
-        welcomeVC.coordinator = self
-
-//        let mainTabVC = MainTabViewController()
-//        mainTabVC.coordinator = self
-
-        navigationController.setNavigationBarHidden(true, animated: false)
-//        navigationController.setViewControllers([welcomeVC, mainTabVC], animated: true)
-        navigationController.setViewControllers([welcomeVC], animated: true)
+        goTo(initialVC ?? MainViewController())
     }
 
     // MARK: - Navigating Back
@@ -72,39 +59,6 @@ class Coordinator {
         viewToPresent.modalPresentationStyle = .overCurrentContext
         extraSteps(viewToPresent)
         presentingVC.present(viewToPresent, animated: true)
-    }
-
-    /// Show a view modally (ie, sliding up to cover the screen)
-    /// - Parameters:
-    ///   - viewToPresent: The view that you want to present
-    ///   - presentingVC: The parent view (ie self) from which to present the modal view
-    ///   - extraSteps: A completion to handle any extra steps needed to initialize the new view (ie,  passing information, setting variables, etc)
-    func showModally<T: UIViewController>(_ viewToPresent: T, from presentingVC: UIViewController, extraSteps: (T) -> Void = { _ in }) {
-        viewToPresent.modalPresentationStyle = .overCurrentContext
-        extraSteps(viewToPresent)
-        presentingVC.present(viewToPresent, animated: true)
-    }
-
-    /// Show a view modally (ie, sliding up to cover the screen) but embed it in a navigation view so as to show the navigation bar at the top
-    /// - Parameters:
-    ///   - viewToPresent: The view that you want to present
-    ///   - presentingVC: The parent view (ie self) from which to present the modal view
-    ///   - extraSteps: A completion to handle any extra steps needed to initialize the new view (ie,  passing information, setting variables, etc)
-    func showModallyWithNavBar<T: HasCoordinator>(_ viewToPresent: T, from presentingVC: UIViewController?, extraSteps: (T) -> Void = { _ in }) {
-        guard let presentingVC = presentingVC else { return }
-
-        // Set up the container navigation controller
-        let containerNavController = BaseNavigationController()
-        containerNavController.coordinator = Coordinator(createWith: containerNavController)
-        containerNavController.modalPresentationStyle = .overFullScreen
-        containerNavController.pushViewController(viewToPresent, animated: false)
-
-        // Set up the main view
-        extraSteps(viewToPresent)
-        viewToPresent.coordinator = containerNavController.coordinator
-
-        // Show the view in its container navigation controller
-        presentingVC.present(containerNavController, animated: true)
     }
 
     /// Transition to the next view sideways, as with a navigation controller

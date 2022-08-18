@@ -36,7 +36,7 @@ class NoInternetViewController: BaseViewController {
     /// Handle changes in internet access
     @objc override func handleReachabilityUpdate() {
         // Dismiss the view if and only if there's now internet
-        DispatchQueue.main.async { [weak self] in if Reachability().isReachable { self?.closeModal() } }
+        DispatchQueue.main.async { [weak self] in if Reachability().isReachable { self?.dismiss(animated: true) } }
     }
 
     // MARK: - UI Elements
@@ -44,7 +44,7 @@ class NoInternetViewController: BaseViewController {
     /// The main stack view containing everything else
     private let mainStackView = UIStackView(axis: .vertical, alignment: .center, distribution: .fill, spacing: 30)
     /// The icon
-    private let noInternetImageView = UIImageView(.noWifi.withTintColor(.midGray))
+    private let noInternetImageView = UIImageView(.noWifi.withTintColor(.white))
     /// The label
     private let noInternetLabel = UILabel(.noInternetMessage, alignment: .center, autoResize: false)
     /// The refresh button

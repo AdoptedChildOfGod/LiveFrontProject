@@ -18,9 +18,7 @@ enum HTTPMethod: String {
 
 struct APIStrings {
     /// The base url for all the requests
-    static let productionBaseURL = "https://parkyourself.digitalawesomeapps.com"
-    static let stagingBaseURL = "https://parkyourself.digitalawesomeapps.com"
-    static var baseURL = "https://parkyourself.digitalawesomeapps.com"
+     static var baseURL = "https://parkyourself.digitalawesomeapps.com"
 
     /// The headers for the requests
     static let jsonType = "application/json; charset=utf-8"
