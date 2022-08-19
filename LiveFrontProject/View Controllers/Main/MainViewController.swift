@@ -5,8 +5,6 @@
 //  Created by Shannon Draeker on 8/19/22.
 //
 
-import Foundation
-
 import UIKit
 
 class MainViewController: BaseViewController {
@@ -15,6 +13,16 @@ class MainViewController: BaseViewController {
     override func loadView() {
         super.loadView()
         CrashlyticsHelper.log()
+
+        // Start loading the rules from the server
+        RuleController.shared.fetchRules(handleCompletion(with: { [weak self] _ in
+            // After it successfully loads, refresh the tableview to show the data
+            self?.rulesTableView.reloadData()
+        }, { [weak self] _ in
+            // Display an error
+            RuleController.shared.allRules = []
+            self?.rulesTableView.reloadData()
+        }))
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -31,7 +39,7 @@ class MainViewController: BaseViewController {
     private let titleLabel = UILabel("The Rules of D&D", fontSize: 32, fontName: .bold, autoResize: false)
 
     /// The tableview listing all the top level rules
-    private lazy var rulesTableView = UITableView(delegate: self, dataSource: self, cellClass: UITableViewCell.self, separator: .singleLine)
+    private lazy var rulesTableView = UITableView(delegate: self, dataSource: self, cellClass: SimpleTableViewCell.self, separator: .singleLine)
 
     // MARK: - Set Up UI
 
@@ -47,7 +55,8 @@ class MainViewController: BaseViewController {
         titleLabel.anchorTop(to: view, 10, safeArea: true).anchorBottom(to: titleBackgroundView, 10).anchorCenterX(to: view)
 
         // The tableview listing all the top level rules
-        rulesTableView.anchorBelow(titleBackgroundView, 10).anchorBottom(to: view, 10, safeArea: true).anchorCenterX(to: view, 1)
+        rulesTableView.anchorBelow(titleBackgroundView, 4).anchorBottom(to: view, 10, safeArea: true).anchorCenterX(to: view, 1)
+        rulesTableView.separatorColor = .highlight
     }
 }
 
@@ -59,25 +68,17 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
 
     /// The content of each row
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: UITableViewCell.identifier, for: indexPath)
-
-        // Format the cell
-        cell.backgroundColor = .clear
-        cell.contentView.backgroundColor = .clear
-        cell.textLabel?.textColor = .text
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: SimpleTableViewCell.identifier, for: indexPath) as? SimpleTableViewCell else { return UITableViewCell() }
 
         // Fill in the text of the cell with either the selected rule or an appropriate message
         if let allRules = RuleController.shared.allRules {
-            if let rule = allRules[safe: indexPath.row] {
-                cell.textLabel?.text = rule.name
-                cell.accessoryType = .disclosureIndicator
+            if let ruleName = allRules[safe: indexPath.row]?.name {
+                cell.setUp(with: ruleName)
             } else {
-                cell.textLabel?.text = "There was an error - please try again"
-                cell.accessoryType = .none
+                cell.setUp(with: "There was an error - please try again", useArrow: false)
             }
         } else {
-            cell.textLabel?.text = "Please wait while the rules load..."
-            cell.accessoryType = .none
+            cell.setUp(with: "Please wait while the rules load...", useArrow: false)
         }
 
         return cell
@@ -86,8 +87,14 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     /// When a row is tapped
     func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
         // Get the selected rule
-        guard let rule = RuleController.shared.allRules?[safe: indexPath.row] else { return }
+        guard let selectedRule = RuleController.shared.allRules?[safe: indexPath.row] else { return }
+        guard let index = selectedRule.index, let url = selectedRule.url else { return CrashlyticsHelper.recordUnexpectedNil("index or url") }
 
-        // Go the next page
+        // Start the loading icon and load the rule
+        view.startLoadingIcon()
+        RuleController.shared.fetchRule(withIndex: index, andURL: url, completion: handleCompletion(with: { [weak self] (rule: Rule?) in
+            // Go to the next page to display the selected rule
+            self?.coordinator?.goTo(DetailViewController()) { $0.rule = rule }
+        }))
     }
 }

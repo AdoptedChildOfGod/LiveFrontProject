@@ -46,6 +46,32 @@ class BaseViewController: UIViewController {
     /// Make the status bar light
     override var preferredStatusBarStyle: UIStatusBarStyle { .lightContent }
 
+    /// Set up the nav bar with a title
+    func setUpNavBar(withTitle title: String) {
+        // Set the title
+        let titleView = UILabel(title, color: .text, fontSize: 20, fontName: .bold, alignment: .center)
+        navigationItem.titleView = titleView
+
+        // Remove the back text
+        navigationItem.backButtonTitle = ""
+
+        // Color the navigation bar
+        navigationController?.navigationBar.barTintColor = .darkHighlight
+        navigationController?.navigationBar.tintColor = .text
+
+        // Fix for iOS 15's breaking of the nav bar color
+        if #available(iOS 15.0, *) {
+            let appearance = UINavigationBarAppearance()
+            appearance.configureWithDefaultBackground()
+            appearance.backgroundColor = .darkHighlight
+            navigationController?.navigationBar.standardAppearance = appearance
+            navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
+        }
+
+        // Show the navigation bar
+        navigationController?.setNavigationBarHidden(false, animated: false)
+    }
+
     // MARK: - Internet
 
     /// Handle changes in internet access

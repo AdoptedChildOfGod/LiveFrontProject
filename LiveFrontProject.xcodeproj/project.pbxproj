@@ -10,6 +10,8 @@
 		4076AD4C28B016BB00952750 /* AllRules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4076AD4B28B016BB00952750 /* AllRules.swift */; };
 		40F0C3B128B017AD00B3EB3E /* Rule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F0C3B028B017AD00B3EB3E /* Rule.swift */; };
 		40F0C3B328B01C0200B3EB3E /* RuleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F0C3B228B01C0200B3EB3E /* RuleController.swift */; };
+		40F0C3B528B0277700B3EB3E /* SimpleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F0C3B428B0277700B3EB3E /* SimpleTableViewCell.swift */; };
+		40F0C3B728B02ABD00B3EB3E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F0C3B628B02ABD00B3EB3E /* DetailViewController.swift */; };
 		40F795C928AEFE7D009E26AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F795C828AEFE7D009E26AA /* AppDelegate.swift */; };
 		40F795CB28AEFE86009E26AA /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F795CA28AEFE86009E26AA /* Coordinator.swift */; };
 		40F795CF28AEFEA0009E26AA /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F795CC28AEFEA0009E26AA /* Reachability.swift */; };
@@ -50,6 +52,8 @@
 		4076AD4B28B016BB00952750 /* AllRules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllRules.swift; sourceTree = "<group>"; };
 		40F0C3B028B017AD00B3EB3E /* Rule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rule.swift; sourceTree = "<group>"; };
 		40F0C3B228B01C0200B3EB3E /* RuleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleController.swift; sourceTree = "<group>"; };
+		40F0C3B428B0277700B3EB3E /* SimpleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTableViewCell.swift; sourceTree = "<group>"; };
+		40F0C3B628B02ABD00B3EB3E /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		40F795A328AEFC8E009E26AA /* LiveFrontProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiveFrontProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40F795B428AEFC91009E26AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40F795C828AEFE7D009E26AA /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -195,6 +199,7 @@
 		40F795C028AEFE16009E26AA /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				40F0C3B428B0277700B3EB3E /* SimpleTableViewCell.swift */,
 				40F795E228AEFEDA009E26AA /* Extensions */,
 			);
 			path = "Custom Views";
@@ -212,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				40FD429D28B00D690091C2EF /* MainViewController.swift */,
+				40F0C3B628B02ABD00B3EB3E /* DetailViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -441,6 +447,7 @@
 				40F795F228AEFEE4009E26AA /* UIButton.swift in Sources */,
 				40F795DB28AEFEB3009E26AA /* CrashlyticsHelper.swift in Sources */,
 				40F795D128AEFEA0009E26AA /* APIWrapper.swift in Sources */,
+				40F0C3B528B0277700B3EB3E /* SimpleTableViewCell.swift in Sources */,
 				40F0C3B328B01C0200B3EB3E /* RuleController.swift in Sources */,
 				40F795FD28AF0006009E26AA /* UIColor.swift in Sources */,
 				40F795C928AEFE7D009E26AA /* AppDelegate.swift in Sources */,
@@ -452,6 +459,7 @@
 				40F795D028AEFEA0009E26AA /* APIStrings.swift in Sources */,
 				4076AD4C28B016BB00952750 /* AllRules.swift in Sources */,
 				40F795EE28AEFEE4009E26AA /* UITextField.swift in Sources */,
+				40F0C3B728B02ABD00B3EB3E /* DetailViewController.swift in Sources */,
 				40F795DF28AEFEBD009E26AA /* Alerts.swift in Sources */,
 				40F7960428AF00F1009E26AA /* BaseViewController.swift in Sources */,
 				40F795F628AEFEE4009E26AA /* UIImageView.swift in Sources */,
