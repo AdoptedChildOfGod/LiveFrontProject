@@ -27,7 +27,4 @@ struct NotificationHelper {
 extension Notification.Name {
     /// When the internet status changes
     static let reachabilityChanged = Notification.Name("ReachabilityStatusChangedNotification")
-
-    /// Update the user's profile page
-//    static let updateUsersProfilePage = Notification.Name("updateUsersProfilePage")
 }

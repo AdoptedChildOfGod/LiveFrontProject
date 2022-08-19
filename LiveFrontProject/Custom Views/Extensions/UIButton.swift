@@ -126,18 +126,4 @@ extension UIButton {
             titleLabel?.baselineAdjustment = .alignCenters
         }
     }
-
-    /// Change the font size
-    /// - Parameter fontSize: The new font size
-    func changeFontSize(to fontSize: CGFloat) {
-        guard let font = titleLabel?.font else { return }
-        titleLabel?.font = UIFont(name: font.familyName, size: fontSize)
-    }
-
-    /// Decrease the font size by a given amount
-    /// - Parameter increment: The increment by which to decrease the font (default 0.5)
-    func decreaseFontSize(by increment: CGFloat = 0.5) {
-        guard let font = titleLabel?.font else { return }
-        changeFontSize(to: font.pointSize - increment)
-    }
 }

@@ -34,13 +34,10 @@
 		40F795DB28AEFEB3009E26AA /* CrashlyticsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F795DA28AEFEB3009E26AA /* CrashlyticsHelper.swift */; };
 		40F795DF28AEFEBD009E26AA /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F795DC28AEFEBD009E26AA /* Alerts.swift */; };
 		40F795E028AEFEBD009E26AA /* LoadingIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F795DD28AEFEBD009E26AA /* LoadingIcon.swift */; };
-		40F795E128AEFEBD009E26AA /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F795DE28AEFEBD009E26AA /* Toast.swift */; };
 		40F795ED28AEFEE4009E26AA /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F795E328AEFEE4009E26AA /* UITableView.swift */; };
-		40F795EE28AEFEE4009E26AA /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F795E428AEFEE4009E26AA /* UITextField.swift */; };
 		40F795F028AEFEE4009E26AA /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F795E628AEFEE4009E26AA /* UIStackView.swift */; };
 		40F795F128AEFEE4009E26AA /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F795E728AEFEE4009E26AA /* UIView.swift */; };
 		40F795F228AEFEE4009E26AA /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F795E828AEFEE4009E26AA /* UIButton.swift */; };
-		40F795F328AEFEE4009E26AA /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F795E928AEFEE4009E26AA /* UICollectionView.swift */; };
 		40F795F528AEFEE4009E26AA /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F795EB28AEFEE4009E26AA /* UILabel.swift */; };
 		40F795F628AEFEE4009E26AA /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F795EC28AEFEE4009E26AA /* UIImageView.swift */; };
 		40F795F928AEFF73009E26AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40F795F828AEFF73009E26AA /* Assets.xcassets */; };
@@ -88,13 +85,10 @@
 		40F795DA28AEFEB3009E26AA /* CrashlyticsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrashlyticsHelper.swift; sourceTree = "<group>"; };
 		40F795DC28AEFEBD009E26AA /* Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		40F795DD28AEFEBD009E26AA /* LoadingIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingIcon.swift; sourceTree = "<group>"; };
-		40F795DE28AEFEBD009E26AA /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		40F795E328AEFEE4009E26AA /* UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
-		40F795E428AEFEE4009E26AA /* UITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		40F795E628AEFEE4009E26AA /* UIStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
 		40F795E728AEFEE4009E26AA /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		40F795E828AEFEE4009E26AA /* UIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
-		40F795E928AEFEE4009E26AA /* UICollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
 		40F795EB28AEFEE4009E26AA /* UILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		40F795EC28AEFEE4009E26AA /* UIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		40F795F828AEFF73009E26AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -294,7 +288,6 @@
 			children = (
 				40F795DC28AEFEBD009E26AA /* Alerts.swift */,
 				40F795DD28AEFEBD009E26AA /* LoadingIcon.swift */,
-				40F795DE28AEFEBD009E26AA /* Toast.swift */,
 			);
 			path = "UX Elements";
 			sourceTree = "<group>";
@@ -313,12 +306,10 @@
 			isa = PBXGroup;
 			children = (
 				40F795E828AEFEE4009E26AA /* UIButton.swift */,
-				40F795E928AEFEE4009E26AA /* UICollectionView.swift */,
 				40F795EC28AEFEE4009E26AA /* UIImageView.swift */,
 				40F795EB28AEFEE4009E26AA /* UILabel.swift */,
 				40F795E628AEFEE4009E26AA /* UIStackView.swift */,
 				40F795E328AEFEE4009E26AA /* UITableView.swift */,
-				40F795E428AEFEE4009E26AA /* UITextField.swift */,
 				40F795E728AEFEE4009E26AA /* UIView.swift */,
 			);
 			path = Extensions;
@@ -470,7 +461,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40F795E128AEFEBD009E26AA /* Toast.swift in Sources */,
 				40F795FB28AEFFF1009E26AA /* UIImage.swift in Sources */,
 				40F0C3CA28B0324500B3EB3E /* SwiftyScanner.swift in Sources */,
 				40F795D728AEFEA6009E26AA /* Notifications.swift in Sources */,
@@ -494,14 +484,12 @@
 				40F0C3B328B01C0200B3EB3E /* RuleController.swift in Sources */,
 				40F795FD28AF0006009E26AA /* UIColor.swift in Sources */,
 				40F795C928AEFE7D009E26AA /* AppDelegate.swift in Sources */,
-				40F795F328AEFEE4009E26AA /* UICollectionView.swift in Sources */,
 				40F795D928AEFEAD009E26AA /* CustomError.swift in Sources */,
 				40FD42A028B0135A0091C2EF /* Encodable.swift in Sources */,
 				40F795CF28AEFEA0009E26AA /* Reachability.swift in Sources */,
 				40F795F528AEFEE4009E26AA /* UILabel.swift in Sources */,
 				40F795D028AEFEA0009E26AA /* APIStrings.swift in Sources */,
 				4076AD4C28B016BB00952750 /* AllRules.swift in Sources */,
-				40F795EE28AEFEE4009E26AA /* UITextField.swift in Sources */,
 				40F0C3C728B0324500B3EB3E /* SwiftyMarkdown.swift in Sources */,
 				40F0C3B728B02ABD00B3EB3E /* DetailViewController.swift in Sources */,
 				40F795DF28AEFEBD009E26AA /* Alerts.swift in Sources */,

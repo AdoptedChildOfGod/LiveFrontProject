@@ -31,6 +31,8 @@ extension UIImageView {
     }
 
     /// Set the color of the image contained in the image view
+    /// - Parameters:
+    ///   - color: The desired UIColor for the tint
     func setImageTintColor(_ color: UIColor) {
         let tintedImage = image?.withRenderingMode(.alwaysTemplate)
         image = tintedImage

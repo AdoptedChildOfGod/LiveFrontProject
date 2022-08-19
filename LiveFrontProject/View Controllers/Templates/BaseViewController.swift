@@ -111,7 +111,6 @@ extension UIViewController {
                     if showAlert, isVisible {
                         self?.record(error, file, function, line)
                     } else {
-                        self?.showToast(message: error.localizedDescription)
                         CrashlyticsHelper.record(error, file, function, line)
                     }
                 }
@@ -136,7 +135,6 @@ extension UIViewController {
                     if showAlert, isVisible {
                         self?.record(error, file, function, line)
                     } else {
-                        self?.showToast(message: error.localizedDescription)
                         CrashlyticsHelper.record(error, file, function, line)
                     }
                 }

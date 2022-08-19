@@ -12,6 +12,4 @@ enum FontNames: String {
     case bold = "Arial-BoldMT"
     case italic = "Arial-ItalicMT"
     case boldItalic = "Arial-BoldItalicMT"
-
-    case timer = "Courier"
 }

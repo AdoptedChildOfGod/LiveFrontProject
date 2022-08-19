@@ -42,39 +42,6 @@ extension UIView {
     class var identifier: String { String(describing: type(of: self)) }
 }
 
-// MARK: - Helper Methods
-
-extension UIView {
-    /// Add a border around the view
-    func addBorder(color: UIColor, width: CGFloat) {
-        layer.borderColor = color.cgColor
-        layer.borderWidth = width
-    }
-
-    /// Add a corner radius to a view
-    func addCornerRadius(_ radius: CGFloat) {
-        layer.cornerRadius = radius
-        layer.masksToBounds = true
-    }
-
-    /// Add a shadow to a view even if the view has rounded corners
-    func addShadow(with radius: CGFloat = 6) {
-        clipsToBounds = true
-        layer.masksToBounds = false
-        layer.shadowRadius = radius
-        layer.shadowOpacity = 0.6
-        layer.shadowOffset = CGSize(width: 2, height: 3)
-        layer.shadowColor = UIColor.black.cgColor
-        layer.shouldRasterize = true
-    }
-
-    /// Quickly add button-like functionality to any view
-    func addInteraction(target: Any?, action: Selector) {
-        isUserInteractionEnabled = true
-        addGestureRecognizer(UITapGestureRecognizer(target: target, action: action))
-    }
-}
-
 // MARK: - Frame Helper
 
 /// Make it extremely easy to get or set any of the frame properties of a view
@@ -104,86 +71,9 @@ extension UIView {
     }
 }
 
-// MARK: - Gradient
-
-extension UIView {
-    /// Create a left to right gradient effect
-    /// - Parameter colors: An array of the colors the use in the gradient
-    func applyGradientLeftRight(with colors: [UIColor]) {
-        layer.insertSublayer(createGradient(colors: colors, direction: .leftToRight), at: 0)
-    }
-
-    /// Create a top to bottom gradient effect
-    /// - Parameter colors: An array of the colors the use in the gradient
-    func applyGradientTopBottom(with colors: [UIColor]) {
-        layer.insertSublayer(createGradient(colors: colors, direction: .topToBottom), at: 0)
-    }
-
-    /// Apply a gradient to a view with the colors and direction specified
-    /// - Parameters:
-    ///   - colors: An array of the colors the use in the gradient
-    ///   - direction: The direction of the gradient
-    /// - Returns: A gradient layer that can be added to any view via self.layer.insertSublayer()
-    func createGradient(colors: [UIColor], direction: GradientDirection) -> CAGradientLayer {
-        let gradient = CAGradientLayer()
-        gradient.frame = bounds
-        gradient.colors = colors.map { $0.cgColor }
-        gradient.locations = [0.0, 1.0]
-        gradient.startPoint = direction.startPoint
-        gradient.endPoint = direction.endPoint
-        gradient.name = "gradientLayer"
-        return gradient
-    }
-
-    /// The directions a gradient can go
-    enum GradientDirection {
-        case topToBottom
-        case leftToRight
-        case bottomToTop
-        case rightToLeft
-
-        var startPoint: CGPoint {
-            switch self {
-            case .topToBottom:
-                return CGPoint(x: 0.0, y: 0.0)
-            case .leftToRight:
-                return CGPoint(x: 0.0, y: 0.5)
-            case .bottomToTop:
-                return CGPoint(x: 0.0, y: 1.0)
-            case .rightToLeft:
-                return CGPoint(x: 1.0, y: 0.5)
-            }
-        }
-
-        var endPoint: CGPoint {
-            switch self {
-            case .topToBottom:
-                return CGPoint(x: 0.0, y: 1.0)
-            case .leftToRight:
-                return CGPoint(x: 1.0, y: 0.5)
-            case .bottomToTop:
-                return CGPoint(x: 0.0, y: 0.0)
-            case .rightToLeft:
-                return CGPoint(x: 0.0, y: 0.5)
-            }
-        }
-    }
-}
-
 // MARK: - Animations
 
 extension UIView {
-    /// Cause the view to shake
-    func shake() {
-        let animation = CABasicAnimation(keyPath: "position")
-        animation.duration = 0.07
-        animation.repeatCount = 3
-        animation.autoreverses = true
-        animation.fromValue = NSValue(cgPoint: CGPoint(x: center.x - 10, y: center.y))
-        animation.toValue = NSValue(cgPoint: CGPoint(x: center.x + 10, y: center.y))
-        layer.add(animation, forKey: "position")
-    }
-
     /// Spin a view around in a full circle
     func rotate360Degrees(duration: CFTimeInterval = 1) {
         let rotateAnimation = CABasicAnimation(keyPath: "transform.rotation")
@@ -199,40 +89,6 @@ extension UIView {
 // MARK: - Misc
 
 extension UIView {
-    /// Get the frame of a subview relative to the current view
-    func getConvertedFrame(fromSubview subview: UIView) -> CGRect? {
-        guard subview.isDescendant(of: self) else { return nil }
-
-        var frame = subview.frame
-        if subview.superview == nil { return frame }
-
-        var superview = subview.superview
-        while superview != self {
-            frame = superview!.convert(frame, to: superview!.superview)
-            if superview?.superview == nil {
-                break
-            } else {
-                superview = superview!.superview
-            }
-        }
-
-        return superview!.convert(frame, to: self)
-    }
-
-    /// Set isHidden to true
-    @discardableResult
-    func hide() -> Self {
-        isHidden = true
-        return self
-    }
-
-    /// Set isHidden to false
-    @discardableResult
-    func show() -> Self {
-        isHidden = false
-        return self
-    }
-
     /// Set isHidden based on some variable
     @discardableResult
     func setVisible(if shouldBeVisible: Bool) -> Self {
