@@ -40,7 +40,7 @@ class NoInternetViewController: BaseViewController {
     /// The icon
     private let noInternetImageView = UIImageView(.noWifi.withTintColor(.text.withAlphaComponent(0.5)))
     /// The label
-    private let noInternetLabel = UILabel(.noInternetMessage, alignment: .center, autoResize: false)
+    private let noInternetLabel = UILabel(NSLocalizedString("no_internet", comment: "No internet connection message"), alignment: .center, autoResize: false)
     /// The refresh button
     private let refreshButton = UIButton("", image: .refresh.withTintColor(.text), action: #selector(refreshButtonTapped))
 

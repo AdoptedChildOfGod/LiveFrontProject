@@ -40,7 +40,7 @@ extension APIWrapper {
             }
 
             // Create the URL request, always attempting to add the access token
-            var request = self.createRequest(from: finalURL, method: method, authToken: UserDefaults.standard.string(forKey: .accessToken) ?? "")
+            var request = self.createRequest(from: finalURL, method: method)
 
             // Add the data to body of the URL request if applicable
             if let jsonString = jsonString {
@@ -76,7 +76,7 @@ extension APIWrapper {
             }
 
             // Create the URL request, always attempting to add the access token
-            var request = self.createRequest(from: finalURL, method: method, authToken: UserDefaults.standard.string(forKey: .accessToken) ?? "")
+            var request = self.createRequest(from: finalURL, method: method)
 
             // Add the data to body of the URL request if applicable
             if let jsonString = jsonString {
@@ -190,7 +190,7 @@ extension APIWrapper {
                 if let data = data {
                     do {
                         let apiModel = try data.tryToObject(ofType: APIErrorModel.self)
-                        self?.record(CustomError.serverMessage(apiModel.error ?? .error), fromRequest: request, with: data, completion: completion)
+                        self?.record(CustomError.serverMessage(apiModel.error ?? "ERROR"), fromRequest: request, with: data, completion: completion)
                     } catch {
                         // This shouldn't happen
                         self?.record(CustomError.serverError, fromRequest: request, with: data, completion: completion)

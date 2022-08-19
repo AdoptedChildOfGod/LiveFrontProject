@@ -20,7 +20,7 @@ class DetailViewController: BaseViewController {
         CrashlyticsHelper.log()
 
         // Show the navigation bar with the rule name
-        setUpNavBar(withTitle: rule?.name ?? .error)
+        setUpNavBar(withTitle: rule?.name ?? NSLocalizedString("error", comment: "Error"))
 
         // Set the content label if there are no subsections
         if rule?.subsections?.isEmpty ?? true, let markdownText = rule?.desc {
@@ -83,7 +83,7 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
         if let subsectionName = rule?.subsections?[safe: indexPath.row]?.name {
             cell.setUp(with: subsectionName)
         } else {
-            cell.setUp(with: "There was an error - please try again", useArrow: false)
+            cell.setUp(with: NSLocalizedString("error_try_again", comment: "Error message"), useArrow: false)
         }
 
         return cell

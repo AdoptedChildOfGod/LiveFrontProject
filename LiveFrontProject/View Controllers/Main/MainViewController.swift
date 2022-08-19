@@ -15,7 +15,7 @@ class MainViewController: BaseViewController {
         CrashlyticsHelper.log()
 
         // Show the navigation bar with the app title
-        setUpNavBar(withTitle: "The Rules of D&D")
+        setUpNavBar(withTitle: NSLocalizedString("rules", comment: "Rules title"))
 
         // Start loading the rules from the server
         RuleController.shared.fetchRules(handleCompletion(with: { [weak self] _ in
@@ -70,10 +70,10 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             if let ruleName = allRules[safe: indexPath.row]?.name {
                 cell.setUp(with: ruleName)
             } else {
-                cell.setUp(with: "There was an error - please try again", useArrow: false)
+                cell.setUp(with: NSLocalizedString("error_try_again", comment: "Error message"), useArrow: false)
             }
         } else {
-            cell.setUp(with: "Please wait while the rules load...", useArrow: false)
+            cell.setUp(with: NSLocalizedString("please_wait", comment: "Loading message for rules"), useArrow: false)
         }
 
         return cell
