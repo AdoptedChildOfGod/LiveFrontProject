@@ -19,11 +19,24 @@ class DetailViewController: BaseViewController {
         super.loadView()
         CrashlyticsHelper.log()
 
-        // Show the navigation bar
+        // Show the navigation bar with the rule name
         setUpNavBar(withTitle: rule?.name ?? .error)
+
+        // Set the content label if there are no subsections
+        if rule?.subsections?.isEmpty ?? true {
+            contentLabel.text = rule?.desc
+        }
+        
+        // Show either the subsections or the content label
+        contentContainerView.setVisible(if: rule?.subsections?.isEmpty ?? true)
+        subsectionsTableView.setVisible(if: rule?.subsections?.isEmpty == false)
     }
 
     // MARK: - UI Elements
+
+    /// The label with the content of the rule, if applicable
+    private let contentContainerView = UIScrollView()
+    private let contentLabel = UILabel("", autoResize: false)
 
     /// The tableview listing the subsections, if applicable
     private lazy var subsectionsTableView = UITableView(delegate: self, dataSource: self, cellClass: SimpleTableViewCell.self, separator: .singleLine)
@@ -32,13 +45,19 @@ class DetailViewController: BaseViewController {
 
     /// Add all the subviews to the view
     override func addAllSubviews() {
-        view.addSubviews(subsectionsTableView)
+        contentContainerView.addSubview(contentLabel)
+
+        view.addSubviews(contentContainerView, subsectionsTableView)
     }
 
     /// Set up the constraints and lay out all the elements in the view
     override func setUpConstraints() {
-        // The tableview listing all the top level rules
-//        subsectionsTableView.anchorBelow(titleBackgroundView, 4).anchorBottom(to: view, 10, safeArea: true).anchorCenterX(to: view, 1)
+        // The label with the content of the rule, if applicable
+        contentContainerView.anchorFill(view, safeArea: true)
+        contentLabel.anchor([.top, .bottom], to: contentContainerView, padding: [10, 10]).anchorCenterX(to: contentContainerView)
+
+        // The tableview listing the subsections, if applicable
+        subsectionsTableView.anchorTop(to: view, 4, safeArea: true).anchorBottom(to: view, 10, safeArea: true).anchorCenterX(to: view, 1)
         subsectionsTableView.separatorColor = .highlight
     }
 }
@@ -67,7 +86,13 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
         // Get the selected rule
         guard let selectedSubsection = rule?.subsections?[safe: indexPath.row] else { return }
+        guard let index = selectedSubsection.index, let url = selectedSubsection.url else { return CrashlyticsHelper.recordUnexpectedNil("index or url") }
 
-        // Go the next page
+        // Start the loading icon and load the rule
+        view.startLoadingIcon()
+        RuleController.shared.fetchRule(withIndex: index, andURL: url, completion: handleCompletion(with: { [weak self] (rule: Rule?) in
+            // Go to the next page to display the selected rule
+            self?.coordinator?.goTo(DetailViewController()) { $0.rule = rule }
+        }))
     }
 }

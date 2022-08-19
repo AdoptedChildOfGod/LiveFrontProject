@@ -14,6 +14,9 @@ class MainViewController: BaseViewController {
         super.loadView()
         CrashlyticsHelper.log()
 
+        // Show the navigation bar with the app title
+        setUpNavBar(withTitle: "The Rules of D&D")
+
         // Start loading the rules from the server
         RuleController.shared.fetchRules(handleCompletion(with: { [weak self] _ in
             // After it successfully loads, refresh the tableview to show the data
@@ -25,18 +28,7 @@ class MainViewController: BaseViewController {
         }))
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-        // Hide the navigation bar on this view
-        navigationController?.setNavigationBarHidden(true, animated: false)
-    }
-
     // MARK: - UI Elements
-
-    /// The title of the page
-    private let titleBackgroundView = UIView(color: .darkHighlight)
-    private let titleLabel = UILabel("The Rules of D&D", fontSize: 32, fontName: .bold, autoResize: false)
 
     /// The tableview listing all the top level rules
     private lazy var rulesTableView = UITableView(delegate: self, dataSource: self, cellClass: SimpleTableViewCell.self, separator: .singleLine)
@@ -45,17 +37,13 @@ class MainViewController: BaseViewController {
 
     /// Add all the subviews to the view
     override func addAllSubviews() {
-        view.addSubviews(titleBackgroundView, titleLabel, rulesTableView)
+        view.addSubview(rulesTableView)
     }
 
     /// Set up the constraints and lay out all the elements in the view
     override func setUpConstraints() {
-        // The title of the page
-        titleBackgroundView.anchorTop(to: view).anchorCenterX(to: view, 1)
-        titleLabel.anchorTop(to: view, 10, safeArea: true).anchorBottom(to: titleBackgroundView, 10).anchorCenterX(to: view)
-
         // The tableview listing all the top level rules
-        rulesTableView.anchorBelow(titleBackgroundView, 4).anchorBottom(to: view, 10, safeArea: true).anchorCenterX(to: view, 1)
+        rulesTableView.anchorTop(to: view, 4, safeArea: true).anchorBottom(to: view, 10, safeArea: true).anchorCenterX(to: view, 1)
         rulesTableView.separatorColor = .highlight
     }
 }

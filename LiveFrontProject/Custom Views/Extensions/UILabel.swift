@@ -62,6 +62,33 @@ extension UILabel {
         adjustsFontSizeToFitWidth = autoResize
     }
 
+    /// Set the text of a label using html formatted content
+    func setHTMLText(to htmlText: String?) {
+        do {
+            // Set some basic styling for unattributed html content
+            let htmlCSSString =
+                "<style>" +
+                "html *" +
+                "{" +
+                "font-size: \(font.pointSize)pt !important;" +
+                "color: #\(textColor ?? .black) !important;" +
+                "font-family: \(font.familyName), Helvetica !important;" +
+                "}</style>"
+
+            // Convert the string to data
+            guard let data = (htmlCSSString + (htmlText ?? "")).data(using: .utf8) else {
+                text = htmlText
+                return
+            }
+            // Set the text
+            attributedText = try NSMutableAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html, .characterEncoding: String.Encoding.utf8.rawValue], documentAttributes: nil)
+        } catch {
+            // Record the error and set the unformatted raw text as a default
+            CrashlyticsHelper.record(error)
+            text = htmlText
+        }
+    }
+
     /// Add an image before or after the text of a label and set the text of the label to the resulting attributed string
     /// - Parameters:
     ///   - image: The image to add, or nil

@@ -49,7 +49,7 @@ class BaseViewController: UIViewController {
     /// Set up the nav bar with a title
     func setUpNavBar(withTitle title: String) {
         // Set the title
-        let titleView = UILabel(title, color: .text, fontSize: 20, fontName: .bold, alignment: .center)
+        let titleView = UILabel(title, color: .text, fontSize: 24, fontName: .bold, alignment: .center)
         navigationItem.titleView = titleView
 
         // Remove the back text
