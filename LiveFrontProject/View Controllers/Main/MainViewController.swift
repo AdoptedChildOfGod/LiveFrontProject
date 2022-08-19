@@ -28,6 +28,13 @@ class MainViewController: BaseViewController {
         }))
     }
 
+    // MARK: - Actions
+
+    /// Start the loading icon (written inside a selector for more control over timing)
+    @objc private func startLoadingIcon() {
+        DispatchQueue.main.async { [weak self] in self?.view.startLoadingIcon() }
+    }
+
     // MARK: - UI Elements
 
     /// The tableview listing all the top level rules
@@ -78,9 +85,14 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         guard let selectedRule = RuleController.shared.allRules?[safe: indexPath.row] else { return }
         guard let index = selectedRule.index, let url = selectedRule.url else { return CrashlyticsHelper.recordUnexpectedNil("index or url") }
 
-        // Start the loading icon and load the rule
-        view.startLoadingIcon()
+        // Start the loading icon (after a slight delay to avoid flashing it for very fast loads)
+        perform(#selector(startLoadingIcon), with: nil, afterDelay: 0.1)
+
+        // Load the data
         RuleController.shared.fetchRule(withIndex: index, andURL: url, completion: handleCompletion(with: { [weak self] (rule: Rule?) in
+            // Cancel the request to start the loading icon if it hasn't already been started
+            if let self = self { NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(self.startLoadingIcon), object: nil) }
+
             // Go to the next page to display the selected rule
             self?.coordinator?.goTo(DetailViewController()) { $0.rule = rule }
         }))

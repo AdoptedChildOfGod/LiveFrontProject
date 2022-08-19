@@ -12,6 +12,16 @@
 		40F0C3B328B01C0200B3EB3E /* RuleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F0C3B228B01C0200B3EB3E /* RuleController.swift */; };
 		40F0C3B528B0277700B3EB3E /* SimpleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F0C3B428B0277700B3EB3E /* SimpleTableViewCell.swift */; };
 		40F0C3B728B02ABD00B3EB3E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F0C3B628B02ABD00B3EB3E /* DetailViewController.swift */; };
+		40F0C3C428B0324500B3EB3E /* SwiftyMarkdown+Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F0C3BA28B0324400B3EB3E /* SwiftyMarkdown+Defaults.swift */; };
+		40F0C3C528B0324500B3EB3E /* SwiftyTokeniser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F0C3BB28B0324500B3EB3E /* SwiftyTokeniser.swift */; };
+		40F0C3C628B0324500B3EB3E /* MarkdownTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F0C3BC28B0324500B3EB3E /* MarkdownTextView.swift */; };
+		40F0C3C728B0324500B3EB3E /* SwiftyMarkdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F0C3BD28B0324500B3EB3E /* SwiftyMarkdown.swift */; };
+		40F0C3C828B0324500B3EB3E /* SwiftyLineProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F0C3BE28B0324500B3EB3E /* SwiftyLineProcessor.swift */; };
+		40F0C3C928B0324500B3EB3E /* SwiftyMarkdown+iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F0C3BF28B0324500B3EB3E /* SwiftyMarkdown+iOS.swift */; };
+		40F0C3CA28B0324500B3EB3E /* SwiftyScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F0C3C028B0324500B3EB3E /* SwiftyScanner.swift */; };
+		40F0C3CB28B0324500B3EB3E /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F0C3C128B0324500B3EB3E /* Token.swift */; };
+		40F0C3CC28B0324500B3EB3E /* String+SwiftyMarkdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F0C3C228B0324500B3EB3E /* String+SwiftyMarkdown.swift */; };
+		40F0C3CD28B0324500B3EB3E /* CharacterRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F0C3C328B0324500B3EB3E /* CharacterRule.swift */; };
 		40F795C928AEFE7D009E26AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F795C828AEFE7D009E26AA /* AppDelegate.swift */; };
 		40F795CB28AEFE86009E26AA /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F795CA28AEFE86009E26AA /* Coordinator.swift */; };
 		40F795CF28AEFEA0009E26AA /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F795CC28AEFEA0009E26AA /* Reachability.swift */; };
@@ -54,6 +64,16 @@
 		40F0C3B228B01C0200B3EB3E /* RuleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleController.swift; sourceTree = "<group>"; };
 		40F0C3B428B0277700B3EB3E /* SimpleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTableViewCell.swift; sourceTree = "<group>"; };
 		40F0C3B628B02ABD00B3EB3E /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		40F0C3BA28B0324400B3EB3E /* SwiftyMarkdown+Defaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SwiftyMarkdown+Defaults.swift"; sourceTree = "<group>"; };
+		40F0C3BB28B0324500B3EB3E /* SwiftyTokeniser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyTokeniser.swift; sourceTree = "<group>"; };
+		40F0C3BC28B0324500B3EB3E /* MarkdownTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkdownTextView.swift; sourceTree = "<group>"; };
+		40F0C3BD28B0324500B3EB3E /* SwiftyMarkdown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyMarkdown.swift; sourceTree = "<group>"; };
+		40F0C3BE28B0324500B3EB3E /* SwiftyLineProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyLineProcessor.swift; sourceTree = "<group>"; };
+		40F0C3BF28B0324500B3EB3E /* SwiftyMarkdown+iOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SwiftyMarkdown+iOS.swift"; sourceTree = "<group>"; };
+		40F0C3C028B0324500B3EB3E /* SwiftyScanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyScanner.swift; sourceTree = "<group>"; };
+		40F0C3C128B0324500B3EB3E /* Token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		40F0C3C228B0324500B3EB3E /* String+SwiftyMarkdown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+SwiftyMarkdown.swift"; sourceTree = "<group>"; };
+		40F0C3C328B0324500B3EB3E /* CharacterRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterRule.swift; sourceTree = "<group>"; };
 		40F795A328AEFC8E009E26AA /* LiveFrontProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiveFrontProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40F795B428AEFC91009E26AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40F795C828AEFE7D009E26AA /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -114,6 +134,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		40F0C3B928B031F000B3EB3E /* Markdown */ = {
+			isa = PBXGroup;
+			children = (
+				40F0C3C328B0324500B3EB3E /* CharacterRule.swift */,
+				40F0C3BC28B0324500B3EB3E /* MarkdownTextView.swift */,
+				40F0C3C228B0324500B3EB3E /* String+SwiftyMarkdown.swift */,
+				40F0C3BE28B0324500B3EB3E /* SwiftyLineProcessor.swift */,
+				40F0C3BD28B0324500B3EB3E /* SwiftyMarkdown.swift */,
+				40F0C3BA28B0324400B3EB3E /* SwiftyMarkdown+Defaults.swift */,
+				40F0C3BF28B0324500B3EB3E /* SwiftyMarkdown+iOS.swift */,
+				40F0C3C028B0324500B3EB3E /* SwiftyScanner.swift */,
+				40F0C3BB28B0324500B3EB3E /* SwiftyTokeniser.swift */,
+				40F0C3C128B0324500B3EB3E /* Token.swift */,
+			);
+			path = Markdown;
+			sourceTree = "<group>";
+		};
 		40F7959A28AEFC8E009E26AA = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +197,7 @@
 		40F795BC28AEFDE2009E26AA /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				40F0C3B928B031F000B3EB3E /* Markdown */,
 				40F795C328AEFE3E009E26AA /* APIs */,
 				40F795C428AEFE42009E26AA /* Errors & Error Handling */,
 				40F795C528AEFE49009E26AA /* Constants */,
@@ -434,14 +472,19 @@
 			files = (
 				40F795E128AEFEBD009E26AA /* Toast.swift in Sources */,
 				40F795FB28AEFFF1009E26AA /* UIImage.swift in Sources */,
+				40F0C3CA28B0324500B3EB3E /* SwiftyScanner.swift in Sources */,
 				40F795D728AEFEA6009E26AA /* Notifications.swift in Sources */,
 				40F7960A28AF03D0009E26AA /* String.swift in Sources */,
 				40F795F028AEFEE4009E26AA /* UIStackView.swift in Sources */,
 				40F795D628AEFEA6009E26AA /* MagicStrings.swift in Sources */,
+				40F0C3CD28B0324500B3EB3E /* CharacterRule.swift in Sources */,
 				40F7960828AF03BB009E26AA /* FontNames.swift in Sources */,
 				40F795CB28AEFE86009E26AA /* Coordinator.swift in Sources */,
+				40F0C3C428B0324500B3EB3E /* SwiftyMarkdown+Defaults.swift in Sources */,
+				40F0C3CB28B0324500B3EB3E /* Token.swift in Sources */,
 				40FD429E28B00D690091C2EF /* MainViewController.swift in Sources */,
 				40F7960E28AF052F009E26AA /* Collection.swift in Sources */,
+				40F0C3CC28B0324500B3EB3E /* String+SwiftyMarkdown.swift in Sources */,
 				40F7960228AF00E7009E26AA /* NoInternetViewController.swift in Sources */,
 				40F795E028AEFEBD009E26AA /* LoadingIcon.swift in Sources */,
 				40F795F228AEFEE4009E26AA /* UIButton.swift in Sources */,
@@ -459,12 +502,17 @@
 				40F795D028AEFEA0009E26AA /* APIStrings.swift in Sources */,
 				4076AD4C28B016BB00952750 /* AllRules.swift in Sources */,
 				40F795EE28AEFEE4009E26AA /* UITextField.swift in Sources */,
+				40F0C3C728B0324500B3EB3E /* SwiftyMarkdown.swift in Sources */,
 				40F0C3B728B02ABD00B3EB3E /* DetailViewController.swift in Sources */,
 				40F795DF28AEFEBD009E26AA /* Alerts.swift in Sources */,
+				40F0C3C528B0324500B3EB3E /* SwiftyTokeniser.swift in Sources */,
 				40F7960428AF00F1009E26AA /* BaseViewController.swift in Sources */,
+				40F0C3C628B0324500B3EB3E /* MarkdownTextView.swift in Sources */,
+				40F0C3C828B0324500B3EB3E /* SwiftyLineProcessor.swift in Sources */,
 				40F795F628AEFEE4009E26AA /* UIImageView.swift in Sources */,
 				40F795D528AEFEA6009E26AA /* Constants.swift in Sources */,
 				40F0C3B128B017AD00B3EB3E /* Rule.swift in Sources */,
+				40F0C3C928B0324500B3EB3E /* SwiftyMarkdown+iOS.swift in Sources */,
 				40F795F128AEFEE4009E26AA /* UIView.swift in Sources */,
 				40F795ED28AEFEE4009E26AA /* UITableView.swift in Sources */,
 			);

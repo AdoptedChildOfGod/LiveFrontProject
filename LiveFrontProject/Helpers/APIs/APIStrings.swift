@@ -28,6 +28,8 @@ struct APIStrings {
 
 // MARK: - URLs
 
+/// API documentation can be found at https://www.dnd5eapi.co/docs/#overview--introduction
+
 struct URLs {
     /// The base url for all the requests
     static var base = "https://www.dnd5eapi.co"

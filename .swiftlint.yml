@@ -3,6 +3,7 @@ disabled_rules:
 - empty_enum_arguments
 - identifier_name
 - inclusive_language
+- empty_count
 
 opt_in_rules:
 - empty_count
@@ -36,6 +37,6 @@ line_length:
     
 cyclomatic_complexity:
     warning: 25
-    error: 30
+    error: 50
     
 reporter: "xcode"

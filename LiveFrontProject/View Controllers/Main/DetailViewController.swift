@@ -23,20 +23,27 @@ class DetailViewController: BaseViewController {
         setUpNavBar(withTitle: rule?.name ?? .error)
 
         // Set the content label if there are no subsections
-        if rule?.subsections?.isEmpty ?? true {
-            contentLabel.text = rule?.desc
+        if rule?.subsections?.isEmpty ?? true, let markdownText = rule?.desc {
+            contentLabel.attributedText = SwiftyMarkdown(string: markdownText, maxImageWidth: view.width * 0.9).applyDefaultFormatting(color: .text).attributedString()
         }
-        
+
         // Show either the subsections or the content label
         contentContainerView.setVisible(if: rule?.subsections?.isEmpty ?? true)
         subsectionsTableView.setVisible(if: rule?.subsections?.isEmpty == false)
+    }
+
+    // MARK: - Actions
+
+    /// Start the loading icon (written inside a selector for more control over timing)
+    @objc private func startLoadingIcon() {
+        DispatchQueue.main.async { [weak self] in self?.view.startLoadingIcon() }
     }
 
     // MARK: - UI Elements
 
     /// The label with the content of the rule, if applicable
     private let contentContainerView = UIScrollView()
-    private let contentLabel = UILabel("", autoResize: false)
+    private lazy var contentLabel = MarkdownTextView(frame: .zero, textContainer: nil)
 
     /// The tableview listing the subsections, if applicable
     private lazy var subsectionsTableView = UITableView(delegate: self, dataSource: self, cellClass: SimpleTableViewCell.self, separator: .singleLine)
@@ -88,9 +95,14 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
         guard let selectedSubsection = rule?.subsections?[safe: indexPath.row] else { return }
         guard let index = selectedSubsection.index, let url = selectedSubsection.url else { return CrashlyticsHelper.recordUnexpectedNil("index or url") }
 
-        // Start the loading icon and load the rule
-        view.startLoadingIcon()
+        // Start the loading icon (after a slight delay to avoid flashing it for very fast loads)
+        perform(#selector(startLoadingIcon), with: nil, afterDelay: 0.1)
+
+        // Load the data
         RuleController.shared.fetchRule(withIndex: index, andURL: url, completion: handleCompletion(with: { [weak self] (rule: Rule?) in
+            // Cancel the request to start the loading icon if it hasn't already been started
+            if let self = self { NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(self.startLoadingIcon), object: nil) }
+
             // Go to the next page to display the selected rule
             self?.coordinator?.goTo(DetailViewController()) { $0.rule = rule }
         }))

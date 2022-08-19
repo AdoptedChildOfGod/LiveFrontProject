@@ -8,8 +8,6 @@ import Foundation
 
 // A place to store all the strings used throughout the app to avoid magic strings
 
-// TODO: - convert to localized strings
-
 // MARK: - Strings for Screens
 
 extension String {

@@ -29,10 +29,11 @@ extension UIImageView {
         // Set the tag
         if let tag = tag { self.tag = tag }
     }
-    
+
+    /// Set the color of the image contained in the image view
     func setImageTintColor(_ color: UIColor) {
-        let tintedImage = self.image?.withRenderingMode(.alwaysTemplate)
-        self.image = tintedImage
-        self.tintColor = color
-      }
+        let tintedImage = image?.withRenderingMode(.alwaysTemplate)
+        image = tintedImage
+        tintColor = color
+    }
 }
