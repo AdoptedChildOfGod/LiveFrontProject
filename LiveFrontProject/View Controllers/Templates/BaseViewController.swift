@@ -15,8 +15,11 @@ class BaseViewController: UIViewController {
 
     override func loadView() {
         super.loadView()
-        //        view.backgroundColor = .background
-        view.backgroundColor = .white
+
+        // Set up the default UI
+        view.backgroundColor = .background
+        addAllSubviews()
+        setUpConstraints()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -34,6 +37,15 @@ class BaseViewController: UIViewController {
         NotificationCenter.default.removeObserver(self, name: .reachabilityChanged, object: nil)
     }
 
+    // MARK: - Set Up UI
+
+    /// Add these functions here, to be overridden in each specific view controller
+    func addAllSubviews() {}
+    func setUpConstraints() {}
+
+    /// Make the status bar light
+    override var preferredStatusBarStyle: UIStatusBarStyle { .lightContent }
+
     // MARK: - Internet
 
     /// Handle changes in internet access
@@ -46,7 +58,7 @@ class BaseViewController: UIViewController {
     }
 }
 
-// MARK: - Helper Methods
+// MARK: - Error Handling
 
 extension UIViewController {
     /// Print, log, and display an error

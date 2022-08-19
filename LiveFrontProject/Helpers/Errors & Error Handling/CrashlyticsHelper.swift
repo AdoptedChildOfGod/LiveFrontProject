@@ -1,6 +1,5 @@
 //
 //  CrashlyticsHelper.swift
-//  Glance
 //
 //  Created by Shannon Draeker on 2/16/21.
 //  Copyright © 2021 DigitalAwesome. All rights reserved.

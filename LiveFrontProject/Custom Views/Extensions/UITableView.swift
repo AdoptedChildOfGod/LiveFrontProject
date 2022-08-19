@@ -16,15 +16,11 @@ extension UITableView {
     ///   - cellClass: The cell class to be used for the cell
     ///   - background: The background color for the tableView (default = .clear)
     ///   - separator: The separator to use between the cells (default = .none)
-    ///   - refreshTarget: The view to handle the refresh action
-    ///   - refreshAction: The function to call when the user swipes down on the tableview to refresh it
     convenience init(delegate: UITableViewDelegate,
                      dataSource: UITableViewDataSource,
                      cellClass: UITableViewCell.Type,
                      background: UIColor = .clear,
-                     separator: UITableViewCell.SeparatorStyle = .none,
-                     refreshTarget: Any = self,
-                     refreshAction: Selector? = nil) {
+                     separator: UITableViewCell.SeparatorStyle = .none) {
         self.init()
 
         // Configure the settings of the tableview
@@ -41,13 +37,6 @@ extension UITableView {
         tableHeaderView = UIView()
         showsVerticalScrollIndicator = false
         showsHorizontalScrollIndicator = false
-
-        // Add the refresh control if desired
-        if let refreshAction = refreshAction {
-            let refreshControl = UIRefreshControl()
-            refreshControl.addTarget(refreshTarget, action: refreshAction, for: .valueChanged)
-            self.refreshControl = refreshControl
-        }
     }
 
     // MARK: - Helper Methods

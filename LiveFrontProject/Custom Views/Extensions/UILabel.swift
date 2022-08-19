@@ -17,7 +17,7 @@ extension UILabel {
     ///   - autoResize: Whether the font size automatically resizes if the label gets too small (default true)
     ///   - numberOfLines: The number of lines the label is allowed to take (default 0)
     convenience init(_ text: String?,
-                     color: UIColor = .white,
+                     color: UIColor = .text,
                      fontSize: CGFloat = 18,
                      fontName: FontNames = .regular,
                      alignment: NSTextAlignment = .left,
@@ -38,7 +38,7 @@ extension UILabel {
     ///   - numberOfLines: The number of lines the label is allowed to take (default 0)
     ///   - autoResize: Whether the font size automatically resizes if the label gets too small (default true)
     func setUpViews(_ text: String?,
-                    color: UIColor = .white,
+                    color: UIColor = .text,
                     fontSize: CGFloat = 18,
                     fontName: FontNames = .regular,
                     alignment: NSTextAlignment = .left,

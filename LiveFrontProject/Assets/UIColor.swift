@@ -10,5 +10,9 @@ import Foundation
 import UIKit.UIColor
 
 extension UIColor {
-//    static let background = UIColor(named: "background")!
+    static let background = UIColor(named: "background")!
+    static let highlight = UIColor(named: "highlight")!
+    static let darkHighlight = UIColor(named: "darkHighlight")!
+    
+    static let text = UIColor(named: "text")!
 }

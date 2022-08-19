@@ -12,12 +12,6 @@ class NoInternetViewController: BaseViewController {
     override func loadView() {
         super.loadView()
         CrashlyticsHelper.log()
-
-        addAllSubviews()
-        setUpConstraints()
-
-        // Listen for notifications in changes to internet access
-        NotificationHelper.observe(.reachabilityChanged, #selector(handleReachabilityUpdate), self)
     }
 
     // MARK: - Actions
@@ -35,7 +29,7 @@ class NoInternetViewController: BaseViewController {
 
     /// Handle changes in internet access
     @objc override func handleReachabilityUpdate() {
-        // Dismiss the view if and only if there's now internet
+        // Dismiss the view if and only if there's currently internet
         DispatchQueue.main.async { [weak self] in if Reachability().isReachable { self?.dismiss(animated: true) } }
     }
 
@@ -44,22 +38,22 @@ class NoInternetViewController: BaseViewController {
     /// The main stack view containing everything else
     private let mainStackView = UIStackView(axis: .vertical, alignment: .center, distribution: .fill, spacing: 30)
     /// The icon
-    private let noInternetImageView = UIImageView(.noWifi.withTintColor(.white))
+    private let noInternetImageView = UIImageView(.noWifi.withTintColor(.text.withAlphaComponent(0.5)))
     /// The label
     private let noInternetLabel = UILabel(.noInternetMessage, alignment: .center, autoResize: false)
     /// The refresh button
-    private let refreshButton = UIButton("", image: .refresh, action: #selector(refreshButtonTapped))
+    private let refreshButton = UIButton("", image: .refresh.withTintColor(.text), action: #selector(refreshButtonTapped))
 
     // MARK: - Set Up UI
 
     /// Add all the subviews to the view
-    private func addAllSubviews() {
+    override func addAllSubviews() {
         mainStackView.addArrangedSubviews(noInternetImageView, noInternetLabel, refreshButton)
         view.addSubview(mainStackView)
     }
 
     /// Set up the constraints and lay out all the elements in the view
-    private func setUpConstraints() {
+    override func setUpConstraints() {
         // The main stack view containing everything else
         mainStackView.anchorCenterY(to: view, nil, offset: 60).anchorCenterX(to: view).setCustomSpacing(12, after: noInternetImageView)
 

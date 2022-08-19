@@ -102,7 +102,7 @@ extension APIWrapper {
     /// Take in a base URL and add an arbitrary number of path components to it
     func createUrlWithPathComponents(_ components: [String]) -> URL? {
         // Form the base URL
-        guard var baseURL = URL(string: APIStrings.baseURL) else { return nil }
+        guard var baseURL = URL(string: URLs.base) else { return nil }
 
         // Add each component
         for component in components {
@@ -189,11 +189,8 @@ extension APIWrapper {
                 // Try to parse any error messages received from the server
                 if let data = data {
                     do {
-                        // TODO: -
-//                        let apiModel = try decoder.decode(APIModel<String?>.self, from: data)
-//                        guard let errorMessage = apiModel.errorInfo?.errorMessage else { return completion(.failure(.serverError)) }
-//                        self?.record(CustomError.serverMessage(errorMessage), fromRequest: request, with: data, completion: completion)
-                        self?.record(CustomError.serverError, fromRequest: request, with: data, completion: completion)
+                        let apiModel = try data.tryToObject(ofType: APIErrorModel.self)
+                        self?.record(CustomError.serverMessage(apiModel.error ?? .error), fromRequest: request, with: data, completion: completion)
                     } catch {
                         // This shouldn't happen
                         self?.record(CustomError.serverError, fromRequest: request, with: data, completion: completion)
@@ -214,7 +211,7 @@ extension APIWrapper {
                 return
             }
             do {
-                let decodedObject = try decoder.decode(T.self, from: data)
+                let decodedObject = try data.tryToObject(ofType: T.self)
 
                 // Return the success
                 return completion(.success(decodedObject))
@@ -249,4 +246,9 @@ extension APIWrapper {
         CrashlyticsHelper.record(error, file, function, line)
         return completion(.failure(.thrownError(error)))
     }
+}
+
+/// The helper class for decoding error messages from the server
+struct APIErrorModel: Codable {
+    var error: String?
 }
