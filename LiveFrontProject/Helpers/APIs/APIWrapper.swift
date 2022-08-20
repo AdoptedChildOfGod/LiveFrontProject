@@ -195,6 +195,7 @@ extension APIWrapper {
                         // This shouldn't happen
                         self?.record(CustomError.serverError, fromRequest: request, with: data, completion: completion)
                     }
+                    return
                 }
 
                 // This shouldn't happen
