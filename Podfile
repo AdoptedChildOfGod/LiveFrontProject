@@ -7,5 +7,6 @@ target 'LiveFrontProject' do
   inhibit_all_warnings!
 
   pod 'SwiftLint'
+  pod 'MarkdownView'
 
 end
