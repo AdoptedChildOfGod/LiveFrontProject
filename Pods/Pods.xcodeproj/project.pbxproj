@@ -20,68 +20,152 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		119F12EC4F10CAA0981A6F6DC383A8A4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		36BB1F18EEE2C468974DB07A61C53E22 /* Pods-LiveFrontProject-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E1D10E086655B64CBD3E68909457D1 /* Pods-LiveFrontProject-dummy.m */; };
-		DF00BEFA664F9062185D52A8BD0524D5 /* Pods-LiveFrontProject-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 93E3DECEAA2AAB56E7A6C29D289A34CE /* Pods-LiveFrontProject-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0948BE140CA16BBD8ED8D22F5F889FE0 /* MarkdownUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1030F6F63FEEFCDEF9D1BEC95738933D /* MarkdownUI.swift */; };
+		18E56467FC1D4D6CE95891DF6C74D774 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		3C8A5D40A36174001ED589207AA7487E /* MarkdownView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 63171003F8AEB50B9C31085538EAE417 /* MarkdownView-dummy.m */; };
+		4275CD956A79B7C6035663343EF882D8 /* main.css in Resources */ = {isa = PBXBuildFile; fileRef = CCEFB7CEC9F4DE83EC9E029C08E5D06F /* main.css */; };
+		46CC78E8F3951FC15B394EF41D92B7F6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		62474E58D6BBC44095C53FE5A2743CCC /* main.js in Resources */ = {isa = PBXBuildFile; fileRef = 31924FA1A2B444BE380D0FC296CCFACD /* main.js */; };
+		882E18D324EF7F9767E90FEED48F4246 /* styled.html in Resources */ = {isa = PBXBuildFile; fileRef = F26E49121CC888106D12854FC318E06C /* styled.html */; };
+		9ED47616A4E6FE0113627E065CB83194 /* Pods-LiveFrontProject-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D6E09C7E1C7AD59D03FE34DA7462352 /* Pods-LiveFrontProject-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9F37637AC384DA90EFF329C782558395 /* MarkdownView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 889AA95221938D3B009392E2A5A7F398 /* MarkdownView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A7A45A23D77C4BBE69A571A3DA285796 /* Pods-LiveFrontProject-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 34110CDB51F1EE957A1716A2BAC5B22B /* Pods-LiveFrontProject-dummy.m */; };
+		BD7718AFCDC72F1BAE0271E2CB847A4D /* MarkdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F83650E28689781ACAABA8BF7E63483 /* MarkdownView.swift */; };
+		CA84E2DB3C9579365D52794A20EDCF03 /* non_styled.html in Resources */ = {isa = PBXBuildFile; fileRef = 24F806F2C82F51177D088BA41EAECD0A /* non_styled.html */; };
+		FE317AC210C935EF05098795E6DE1882 /* MarkdownView-MarkdownView in Resources */ = {isa = PBXBuildFile; fileRef = 209039795703F925DC2A9D91BF5B7821 /* MarkdownView-MarkdownView */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		142AB4104358E086B8C25A45D1A556E1 /* PBXContainerItemProxy */ = {
+		882CE6F6F72B15363975CFB675939481 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9CE7BB59885E11A7F43D648F9B1D6D12;
+			remoteInfo = MarkdownView;
+		};
+		D8C2D9DE13933968A7D7A66268417FBB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 52B60EC2A583F24ACBB69C113F5488B9;
 			remoteInfo = SwiftLint;
 		};
+		E7ABAB89990DB473395CC6F6447CE958 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A04E94702B62931D2A5061F58579BBC4;
+			remoteInfo = "MarkdownView-MarkdownView";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		016F9ADA2BE82DC993BC08F969F7F4AC /* Pods-LiveFrontProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LiveFrontProject.debug.xcconfig"; sourceTree = "<group>"; };
-		0AE6B5100E409EA13DE50514762AB424 /* Pods-LiveFrontProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LiveFrontProject.release.xcconfig"; sourceTree = "<group>"; };
-		20E1D10E086655B64CBD3E68909457D1 /* Pods-LiveFrontProject-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LiveFrontProject-dummy.m"; sourceTree = "<group>"; };
-		3EC0124719FE8EF5FDDD72C26F8A2F57 /* SwiftLint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftLint.debug.xcconfig; sourceTree = "<group>"; };
-		4E90FB997064075312F67C7CBE4D0308 /* Pods-LiveFrontProject.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-LiveFrontProject.modulemap"; sourceTree = "<group>"; };
+		1030F6F63FEEFCDEF9D1BEC95738933D /* MarkdownUI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MarkdownUI.swift; path = Sources/MarkdownView/MarkdownUI.swift; sourceTree = "<group>"; };
+		209039795703F925DC2A9D91BF5B7821 /* MarkdownView-MarkdownView */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "MarkdownView-MarkdownView"; path = MarkdownView.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		20FFAEAD7D32DD7E1E44862E183D66FD /* Pods-LiveFrontProject-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LiveFrontProject-Info.plist"; sourceTree = "<group>"; };
+		24F806F2C82F51177D088BA41EAECD0A /* non_styled.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = non_styled.html; path = Sources/MarkdownView/Resources/non_styled.html; sourceTree = "<group>"; };
+		31924FA1A2B444BE380D0FC296CCFACD /* main.js */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.javascript; name = main.js; path = Sources/MarkdownView/Resources/main.js; sourceTree = "<group>"; };
+		34110CDB51F1EE957A1716A2BAC5B22B /* Pods-LiveFrontProject-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LiveFrontProject-dummy.m"; sourceTree = "<group>"; };
+		359F1D1294B5A4C150219C4AEB69E430 /* Pods-LiveFrontProject-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LiveFrontProject-frameworks.sh"; sourceTree = "<group>"; };
+		43739B031AE287AC4DE61A78FAE163FC /* ResourceBundle-MarkdownView-MarkdownView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-MarkdownView-MarkdownView-Info.plist"; sourceTree = "<group>"; };
+		628DA8FE7D57C973FEC3BB836ADD1191 /* Pods-LiveFrontProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LiveFrontProject.release.xcconfig"; sourceTree = "<group>"; };
+		63171003F8AEB50B9C31085538EAE417 /* MarkdownView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MarkdownView-dummy.m"; sourceTree = "<group>"; };
+		68BF3C3C26BEDB30F3048C4AF4BD7885 /* SwiftLint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftLint.debug.xcconfig; sourceTree = "<group>"; };
+		6F83650E28689781ACAABA8BF7E63483 /* MarkdownView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MarkdownView.swift; path = Sources/MarkdownView/MarkdownView.swift; sourceTree = "<group>"; };
+		702CE5644EF1F26425C05E058547C562 /* MarkdownView */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MarkdownView; path = MarkdownView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		716650D2CD16FFE4D2DBA29B922E789B /* Pods-LiveFrontProject.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-LiveFrontProject.modulemap"; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		73B98A0CCB491AA51719AC73CAFCB23A /* Pods-LiveFrontProject-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LiveFrontProject-Info.plist"; sourceTree = "<group>"; };
-		7EAB1DA481EDDC005A251D3A5E6BE4CD /* SwiftLint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftLint.release.xcconfig; sourceTree = "<group>"; };
-		93E3DECEAA2AAB56E7A6C29D289A34CE /* Pods-LiveFrontProject-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LiveFrontProject-umbrella.h"; sourceTree = "<group>"; };
+		889AA95221938D3B009392E2A5A7F398 /* MarkdownView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MarkdownView-umbrella.h"; sourceTree = "<group>"; };
+		9876C615A479A277A9D66F50CD6C97F8 /* MarkdownView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MarkdownView.release.xcconfig; sourceTree = "<group>"; };
+		9D6E09C7E1C7AD59D03FE34DA7462352 /* Pods-LiveFrontProject-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LiveFrontProject-umbrella.h"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		C19BDE54BE6CB8E7D9D9ABFE2B6C77A2 /* Pods-LiveFrontProject-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LiveFrontProject-acknowledgements.markdown"; sourceTree = "<group>"; };
+		A113BD33DE963921493829F557C0A9B0 /* Pods-LiveFrontProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LiveFrontProject.debug.xcconfig"; sourceTree = "<group>"; };
+		A4305095B9C9AFB892FD9A0A078C5B54 /* MarkdownView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MarkdownView-Info.plist"; sourceTree = "<group>"; };
+		A86C83EFBB2B05D4F4E538DCB3C7E655 /* MarkdownView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MarkdownView.modulemap; sourceTree = "<group>"; };
+		B6A40B5F00779EC458D89CF2BD5EF423 /* Pods-LiveFrontProject-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LiveFrontProject-acknowledgements.markdown"; sourceTree = "<group>"; };
+		C7153072FF9D188D94CBD67EEC293609 /* Pods-LiveFrontProject-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LiveFrontProject-acknowledgements.plist"; sourceTree = "<group>"; };
+		CCEFB7CEC9F4DE83EC9E029C08E5D06F /* main.css */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.css; name = main.css; path = Sources/MarkdownView/Resources/main.css; sourceTree = "<group>"; };
 		D21B27481C5592D2B4777AFA3A30628B /* Pods-LiveFrontProject */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-LiveFrontProject"; path = Pods_LiveFrontProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D89CE50CDA6D877FE451894DD91A7FB2 /* Pods-LiveFrontProject-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LiveFrontProject-acknowledgements.plist"; sourceTree = "<group>"; };
+		E70957CC3470B40FBE0F365D1AFB4D47 /* MarkdownView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MarkdownView.debug.xcconfig; sourceTree = "<group>"; };
+		EE601037E2242EEF6CF5D5339406D8B9 /* MarkdownView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MarkdownView-prefix.pch"; sourceTree = "<group>"; };
+		F26E49121CC888106D12854FC318E06C /* styled.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = styled.html; path = Sources/MarkdownView/Resources/styled.html; sourceTree = "<group>"; };
+		FE7039BBEF1C3FECF6F4D490293384D8 /* SwiftLint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftLint.release.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		05DE39104ADE4F00035E49BEB032B86D /* Frameworks */ = {
+		5962DCC1134A1B426156350EB5B4CB49 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				119F12EC4F10CAA0981A6F6DC383A8A4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9370AB2B7D2A7D7FAFD00522C0709768 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18E56467FC1D4D6CE95891DF6C74D774 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A428883CDBD6025CC6B4C1BA2590AA91 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46CC78E8F3951FC15B394EF41D92B7F6 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1E08ED8D916FE25C787F5C4DEF7B6B57 /* Targets Support Files */ = {
+		0BF36B366E7E218F2A5476F781685BC6 /* MarkdownView */ = {
 			isa = PBXGroup;
 			children = (
-				3ED87210186614E38AC53A3795E4B75F /* Pods-LiveFrontProject */,
+				1030F6F63FEEFCDEF9D1BEC95738933D /* MarkdownUI.swift */,
+				6F83650E28689781ACAABA8BF7E63483 /* MarkdownView.swift */,
+				F7044D222EB6D701E99CDCF41D740852 /* Resources */,
+				135E1011B864A348B0B4A08E8B2AD13C /* Support Files */,
+			);
+			path = MarkdownView;
+			sourceTree = "<group>";
+		};
+		135E1011B864A348B0B4A08E8B2AD13C /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A86C83EFBB2B05D4F4E538DCB3C7E655 /* MarkdownView.modulemap */,
+				63171003F8AEB50B9C31085538EAE417 /* MarkdownView-dummy.m */,
+				A4305095B9C9AFB892FD9A0A078C5B54 /* MarkdownView-Info.plist */,
+				EE601037E2242EEF6CF5D5339406D8B9 /* MarkdownView-prefix.pch */,
+				889AA95221938D3B009392E2A5A7F398 /* MarkdownView-umbrella.h */,
+				E70957CC3470B40FBE0F365D1AFB4D47 /* MarkdownView.debug.xcconfig */,
+				9876C615A479A277A9D66F50CD6C97F8 /* MarkdownView.release.xcconfig */,
+				43739B031AE287AC4DE61A78FAE163FC /* ResourceBundle-MarkdownView-MarkdownView-Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/MarkdownView";
+			sourceTree = "<group>";
+		};
+		412D941D93AF59E9F2B9E448935BB3F9 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				4172491D1F0B00AA8A98B932EA4E97A9 /* Pods-LiveFrontProject */,
 			);
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		3ED87210186614E38AC53A3795E4B75F /* Pods-LiveFrontProject */ = {
+		4172491D1F0B00AA8A98B932EA4E97A9 /* Pods-LiveFrontProject */ = {
 			isa = PBXGroup;
 			children = (
-				4E90FB997064075312F67C7CBE4D0308 /* Pods-LiveFrontProject.modulemap */,
-				C19BDE54BE6CB8E7D9D9ABFE2B6C77A2 /* Pods-LiveFrontProject-acknowledgements.markdown */,
-				D89CE50CDA6D877FE451894DD91A7FB2 /* Pods-LiveFrontProject-acknowledgements.plist */,
-				20E1D10E086655B64CBD3E68909457D1 /* Pods-LiveFrontProject-dummy.m */,
-				73B98A0CCB491AA51719AC73CAFCB23A /* Pods-LiveFrontProject-Info.plist */,
-				93E3DECEAA2AAB56E7A6C29D289A34CE /* Pods-LiveFrontProject-umbrella.h */,
-				016F9ADA2BE82DC993BC08F969F7F4AC /* Pods-LiveFrontProject.debug.xcconfig */,
-				0AE6B5100E409EA13DE50514762AB424 /* Pods-LiveFrontProject.release.xcconfig */,
+				716650D2CD16FFE4D2DBA29B922E789B /* Pods-LiveFrontProject.modulemap */,
+				B6A40B5F00779EC458D89CF2BD5EF423 /* Pods-LiveFrontProject-acknowledgements.markdown */,
+				C7153072FF9D188D94CBD67EEC293609 /* Pods-LiveFrontProject-acknowledgements.plist */,
+				34110CDB51F1EE957A1716A2BAC5B22B /* Pods-LiveFrontProject-dummy.m */,
+				359F1D1294B5A4C150219C4AEB69E430 /* Pods-LiveFrontProject-frameworks.sh */,
+				20FFAEAD7D32DD7E1E44862E183D66FD /* Pods-LiveFrontProject-Info.plist */,
+				9D6E09C7E1C7AD59D03FE34DA7462352 /* Pods-LiveFrontProject-umbrella.h */,
+				A113BD33DE963921493829F557C0A9B0 /* Pods-LiveFrontProject.debug.xcconfig */,
+				628DA8FE7D57C973FEC3BB836ADD1191 /* Pods-LiveFrontProject.release.xcconfig */,
 			);
 			name = "Pods-LiveFrontProject";
 			path = "Target Support Files/Pods-LiveFrontProject";
@@ -95,28 +179,29 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		7FDA596DBE0337ACDFE55A210D54EF26 /* Support Files */ = {
+		C694978F0459ACC2D641448600710EFC /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				3EC0124719FE8EF5FDDD72C26F8A2F57 /* SwiftLint.debug.xcconfig */,
-				7EAB1DA481EDDC005A251D3A5E6BE4CD /* SwiftLint.release.xcconfig */,
+				68BF3C3C26BEDB30F3048C4AF4BD7885 /* SwiftLint.debug.xcconfig */,
+				FE7039BBEF1C3FECF6F4D490293384D8 /* SwiftLint.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/SwiftLint";
 			sourceTree = "<group>";
 		};
-		847A856E1D6014564A0156DB89C4CB21 /* Products */ = {
+		CB39CAD40EE4261CB91A6F74BD2C48BB /* SwiftLint */ = {
 			isa = PBXGroup;
 			children = (
-				D21B27481C5592D2B4777AFA3A30628B /* Pods-LiveFrontProject */,
+				C694978F0459ACC2D641448600710EFC /* Support Files */,
 			);
-			name = Products;
+			path = SwiftLint;
 			sourceTree = "<group>";
 		};
-		965877409E01FB3D85D85E90E6B30185 /* Pods */ = {
+		CC83652BE63E494C7C9E089846715717 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				D96179D43A67C5D5323B0682D32C133C /* SwiftLint */,
+				0BF36B366E7E218F2A5476F781685BC6 /* MarkdownView */,
+				CB39CAD40EE4261CB91A6F74BD2C48BB /* SwiftLint */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -126,9 +211,9 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				965877409E01FB3D85D85E90E6B30185 /* Pods */,
-				847A856E1D6014564A0156DB89C4CB21 /* Products */,
-				1E08ED8D916FE25C787F5C4DEF7B6B57 /* Targets Support Files */,
+				CC83652BE63E494C7C9E089846715717 /* Pods */,
+				D2B0E900E7F528DD6A5FE0C5A3C4E8E7 /* Products */,
+				412D941D93AF59E9F2B9E448935BB3F9 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -140,41 +225,99 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D96179D43A67C5D5323B0682D32C133C /* SwiftLint */ = {
+		D2B0E900E7F528DD6A5FE0C5A3C4E8E7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7FDA596DBE0337ACDFE55A210D54EF26 /* Support Files */,
+				702CE5644EF1F26425C05E058547C562 /* MarkdownView */,
+				209039795703F925DC2A9D91BF5B7821 /* MarkdownView-MarkdownView */,
+				D21B27481C5592D2B4777AFA3A30628B /* Pods-LiveFrontProject */,
 			);
-			path = SwiftLint;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F7044D222EB6D701E99CDCF41D740852 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CCEFB7CEC9F4DE83EC9E029C08E5D06F /* main.css */,
+				31924FA1A2B444BE380D0FC296CCFACD /* main.js */,
+				24F806F2C82F51177D088BA41EAECD0A /* non_styled.html */,
+				F26E49121CC888106D12854FC318E06C /* styled.html */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		13D28F7092E5691CE5D8A5444EEA6F8C /* Headers */ = {
+		72859934F110DB4356386B0C8446A0A4 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF00BEFA664F9062185D52A8BD0524D5 /* Pods-LiveFrontProject-umbrella.h in Headers */,
+				9ED47616A4E6FE0113627E065CB83194 /* Pods-LiveFrontProject-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B96D11A3FAEC8C3047ED48B15E663090 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F37637AC384DA90EFF329C782558395 /* MarkdownView-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		FF2004711F3B80CC1847E8677FA46E43 /* Pods-LiveFrontProject */ = {
+		9CE7BB59885E11A7F43D648F9B1D6D12 /* MarkdownView */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6A8C17A4EDB09609B61A258B0B591431 /* Build configuration list for PBXNativeTarget "Pods-LiveFrontProject" */;
+			buildConfigurationList = EBCA5BE7FB584D108DD3DC7AE9ACCCAD /* Build configuration list for PBXNativeTarget "MarkdownView" */;
 			buildPhases = (
-				13D28F7092E5691CE5D8A5444EEA6F8C /* Headers */,
-				E5C5032A2EC75BC31974E4BA3F0C5548 /* Sources */,
-				05DE39104ADE4F00035E49BEB032B86D /* Frameworks */,
-				C534832D7DE1BBF71DB54523479C34D6 /* Resources */,
+				B96D11A3FAEC8C3047ED48B15E663090 /* Headers */,
+				03B1BA0741E3B09532838836208B1879 /* Sources */,
+				A428883CDBD6025CC6B4C1BA2590AA91 /* Frameworks */,
+				86027F1F34339A26546B11BFFF5AA6A0 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				9D41F1F559968E72F0BF9E5E66D9F0FA /* PBXTargetDependency */,
+				C8B13CE61754D62BAD09B0F8A17C5036 /* PBXTargetDependency */,
+			);
+			name = MarkdownView;
+			productName = MarkdownView;
+			productReference = 702CE5644EF1F26425C05E058547C562 /* MarkdownView */;
+			productType = "com.apple.product-type.framework";
+		};
+		A04E94702B62931D2A5061F58579BBC4 /* MarkdownView-MarkdownView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF67E838F7F55642027858DB2653AB78 /* Build configuration list for PBXNativeTarget "MarkdownView-MarkdownView" */;
+			buildPhases = (
+				19F960CD8640BC78C12C9394E150673B /* Sources */,
+				5962DCC1134A1B426156350EB5B4CB49 /* Frameworks */,
+				17E8A40445ABCF4F9E869032494F2A0A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "MarkdownView-MarkdownView";
+			productName = MarkdownView;
+			productReference = 209039795703F925DC2A9D91BF5B7821 /* MarkdownView-MarkdownView */;
+			productType = "com.apple.product-type.bundle";
+		};
+		FF2004711F3B80CC1847E8677FA46E43 /* Pods-LiveFrontProject */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6DE032550989C82C3100E10F2A10A1E0 /* Build configuration list for PBXNativeTarget "Pods-LiveFrontProject" */;
+			buildPhases = (
+				72859934F110DB4356386B0C8446A0A4 /* Headers */,
+				172FA9986183E4F95ACC1C6176C19827 /* Sources */,
+				9370AB2B7D2A7D7FAFD00522C0709768 /* Frameworks */,
+				3EC9B0F22D1C1715E01888C336A13482 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0CBCF49F20D1A23DE993B9A488D3DA2E /* PBXTargetDependency */,
+				9CAB689965554EB53AAEC8B86530039A /* PBXTargetDependency */,
 			);
 			name = "Pods-LiveFrontProject";
 			productName = Pods_LiveFrontProject;
@@ -199,10 +342,12 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 847A856E1D6014564A0156DB89C4CB21 /* Products */;
+			productRefGroup = D2B0E900E7F528DD6A5FE0C5A3C4E8E7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				9CE7BB59885E11A7F43D648F9B1D6D12 /* MarkdownView */,
+				A04E94702B62931D2A5061F58579BBC4 /* MarkdownView-MarkdownView */,
 				FF2004711F3B80CC1847E8677FA46E43 /* Pods-LiveFrontProject */,
 				52B60EC2A583F24ACBB69C113F5488B9 /* SwiftLint */,
 			);
@@ -210,32 +355,80 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		C534832D7DE1BBF71DB54523479C34D6 /* Resources */ = {
+		17E8A40445ABCF4F9E869032494F2A0A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4275CD956A79B7C6035663343EF882D8 /* main.css in Resources */,
+				62474E58D6BBC44095C53FE5A2743CCC /* main.js in Resources */,
+				CA84E2DB3C9579365D52794A20EDCF03 /* non_styled.html in Resources */,
+				882E18D324EF7F9767E90FEED48F4246 /* styled.html in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3EC9B0F22D1C1715E01888C336A13482 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		86027F1F34339A26546B11BFFF5AA6A0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE317AC210C935EF05098795E6DE1882 /* MarkdownView-MarkdownView in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		E5C5032A2EC75BC31974E4BA3F0C5548 /* Sources */ = {
+		03B1BA0741E3B09532838836208B1879 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36BB1F18EEE2C468974DB07A61C53E22 /* Pods-LiveFrontProject-dummy.m in Sources */,
+				0948BE140CA16BBD8ED8D22F5F889FE0 /* MarkdownUI.swift in Sources */,
+				BD7718AFCDC72F1BAE0271E2CB847A4D /* MarkdownView.swift in Sources */,
+				3C8A5D40A36174001ED589207AA7487E /* MarkdownView-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		172FA9986183E4F95ACC1C6176C19827 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A7A45A23D77C4BBE69A571A3DA285796 /* Pods-LiveFrontProject-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		19F960CD8640BC78C12C9394E150673B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		9D41F1F559968E72F0BF9E5E66D9F0FA /* PBXTargetDependency */ = {
+		0CBCF49F20D1A23DE993B9A488D3DA2E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MarkdownView;
+			target = 9CE7BB59885E11A7F43D648F9B1D6D12 /* MarkdownView */;
+			targetProxy = 882CE6F6F72B15363975CFB675939481 /* PBXContainerItemProxy */;
+		};
+		9CAB689965554EB53AAEC8B86530039A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SwiftLint;
 			target = 52B60EC2A583F24ACBB69C113F5488B9 /* SwiftLint */;
-			targetProxy = 142AB4104358E086B8C25A45D1A556E1 /* PBXContainerItemProxy */;
+			targetProxy = D8C2D9DE13933968A7D7A66268417FBB /* PBXContainerItemProxy */;
+		};
+		C8B13CE61754D62BAD09B0F8A17C5036 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "MarkdownView-MarkdownView";
+			target = A04E94702B62931D2A5061F58579BBC4 /* MarkdownView-MarkdownView */;
+			targetProxy = E7ABAB89990DB473395CC6F6447CE958 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -368,28 +561,10 @@
 			};
 			name = Release;
 		};
-		AD81E62ACCB0B7A923FC8AA288F9921E /* Release */ = {
+		3EA7D0A7E1BC5F404EE6D2955688E32F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7EAB1DA481EDDC005A251D3A5E6BE4CD /* SwiftLint.release.xcconfig */;
+			baseConfigurationReference = 9876C615A479A277A9D66F50CD6C97F8 /* MarkdownView.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		B6CC5B38AF763FC8693A758267236776 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0AE6B5100E409EA13DE50514762AB424 /* Pods-LiveFrontProject.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -399,23 +574,22 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-LiveFrontProject/Pods-LiveFrontProject-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/MarkdownView/MarkdownView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MarkdownView/MarkdownView-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-LiveFrontProject/Pods-LiveFrontProject.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				MODULEMAP_FILE = "Target Support Files/MarkdownView/MarkdownView.modulemap";
+				PRODUCT_MODULE_NAME = MarkdownView;
+				PRODUCT_NAME = MarkdownView;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -423,9 +597,9 @@
 			};
 			name = Release;
 		};
-		CCD4F902BC8ABC8781C279534342335A /* Debug */ = {
+		551304BBB4F08B1F77BBC66890F00263 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 016F9ADA2BE82DC993BC08F969F7F4AC /* Pods-LiveFrontProject.debug.xcconfig */;
+			baseConfigurationReference = A113BD33DE963921493829F557C0A9B0 /* Pods-LiveFrontProject.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -460,9 +634,131 @@
 			};
 			name = Debug;
 		};
+		5A11630661B4655341CD26F52E75E357 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E70957CC3470B40FBE0F365D1AFB4D47 /* MarkdownView.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/MarkdownView/MarkdownView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MarkdownView/MarkdownView-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/MarkdownView/MarkdownView.modulemap";
+				PRODUCT_MODULE_NAME = MarkdownView;
+				PRODUCT_NAME = MarkdownView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		67B09008DFB8FE8A476299EEE7CD53D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9876C615A479A277A9D66F50CD6C97F8 /* MarkdownView.release.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/MarkdownView";
+				IBSC_MODULE = MarkdownView;
+				INFOPLIST_FILE = "Target Support Files/MarkdownView/ResourceBundle-MarkdownView-MarkdownView-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_NAME = MarkdownView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		910C6A10D8A6160CE62B802D2AD39B97 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E70957CC3470B40FBE0F365D1AFB4D47 /* MarkdownView.debug.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/MarkdownView";
+				IBSC_MODULE = MarkdownView;
+				INFOPLIST_FILE = "Target Support Files/MarkdownView/ResourceBundle-MarkdownView-MarkdownView-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_NAME = MarkdownView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		AD81E62ACCB0B7A923FC8AA288F9921E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE7039BBEF1C3FECF6F4D490293384D8 /* SwiftLint.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D43E2808A299B9C9D30B372A4C51046E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 628DA8FE7D57C973FEC3BB836ADD1191 /* Pods-LiveFrontProject.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-LiveFrontProject/Pods-LiveFrontProject-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-LiveFrontProject/Pods-LiveFrontProject.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		EADD1F50ABC8096A0D6CB18822BB4EE4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3EC0124719FE8EF5FDDD72C26F8A2F57 /* SwiftLint.debug.xcconfig */;
+			baseConfigurationReference = 68BF3C3C26BEDB30F3048C4AF4BD7885 /* SwiftLint.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -488,11 +784,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6A8C17A4EDB09609B61A258B0B591431 /* Build configuration list for PBXNativeTarget "Pods-LiveFrontProject" */ = {
+		6DE032550989C82C3100E10F2A10A1E0 /* Build configuration list for PBXNativeTarget "Pods-LiveFrontProject" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CCD4F902BC8ABC8781C279534342335A /* Debug */,
-				B6CC5B38AF763FC8693A758267236776 /* Release */,
+				551304BBB4F08B1F77BBC66890F00263 /* Debug */,
+				D43E2808A299B9C9D30B372A4C51046E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -502,6 +798,24 @@
 			buildConfigurations = (
 				EADD1F50ABC8096A0D6CB18822BB4EE4 /* Debug */,
 				AD81E62ACCB0B7A923FC8AA288F9921E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EBCA5BE7FB584D108DD3DC7AE9ACCCAD /* Build configuration list for PBXNativeTarget "MarkdownView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A11630661B4655341CD26F52E75E357 /* Debug */,
+				3EA7D0A7E1BC5F404EE6D2955688E32F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF67E838F7F55642027858DB2653AB78 /* Build configuration list for PBXNativeTarget "MarkdownView-MarkdownView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				910C6A10D8A6160CE62B802D2AD39B97 /* Debug */,
+				67B09008DFB8FE8A476299EEE7CD53D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
