@@ -35,7 +35,7 @@ class SimpleTableViewCell: UITableViewCell {
     // MARK: - UI Elements
 
     /// The stack view
-    private let mainStackView = UIStackView(axis: .horizontal, alignment: .fill, distribution: .equalSpacing)
+    private let mainStackView = UIStackView(axis: .horizontal, alignment: .center, distribution: .fill, spacing: 12)
 
     /// The title and disclosure indicator
     private let titleLabel = UILabel("", numberOfLines: 1)
@@ -55,7 +55,7 @@ class SimpleTableViewCell: UITableViewCell {
         mainStackView.anchorCenterY(to: contentView, 0.5).anchor([.leading, .trailing], to: contentView, padding: [12, 4])
 
         // The title and disclosure indicator
-        disclosureIndicatorView.anchor(aspectRatio: 1, size: 24)
+        disclosureIndicatorView.anchor(aspectRatio: 1)
         disclosureIndicatorView.setImageTintColor(.text)
     }
 }

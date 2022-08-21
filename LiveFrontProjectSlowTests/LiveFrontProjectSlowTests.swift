@@ -26,17 +26,10 @@ class LiveFrontProjectSlowTests: XCTestCase {
 
     // MARK: - Tests
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
     /// Test that loading the list of all the rules works correctly
     func testLoadingRulesWorks() throws {
         // Check for internet
-       try XCTSkipUnless(Reachability().isReachable, "Network connectivity needed for this test.")
+        try XCTSkipUnless(Reachability().isReachable, "Network connectivity needed for this test.")
 
         // Create the promise
         let promise = expectation(description: "Output as expected")
@@ -46,6 +39,33 @@ class LiveFrontProjectSlowTests: XCTestCase {
         ruleController.fetchRules { result in
             switch result {
             case .success: break
+            case let .failure(error): errorMessage = error
+            }
+
+            promise.fulfill()
+        }
+
+        // Wait for the results
+        wait(for: [promise], timeout: 2)
+        XCTAssertNil(errorMessage)
+    }
+
+    /// Test that loading a specific rule works correctly
+    func testLoadingSpecificRuleWorks() throws {
+        // Check for internet
+        try XCTSkipUnless(Reachability().isReachable, "Network connectivity needed for this test.")
+
+        // Create the promise
+        let promise = expectation(description: "Output as expected")
+        var errorMessage: CustomError?
+
+        // Try to fetch a specific rule
+        ruleController.fetchRule(withIndex: "spellcasting", andURL: "/api/rules/spellcasting") { result in
+            switch result {
+            case let .success(rule):
+                XCTAssert(rule?.name == "Spellcasting")
+                XCTAssert(rule?.index == "spellcasting")
+                XCTAssert(rule?.subsections?.isEmpty != true)
             case let .failure(error): errorMessage = error
             }
 

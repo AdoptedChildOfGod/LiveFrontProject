@@ -17,12 +17,13 @@ class DetailViewController: BaseViewController {
 
     override func loadView() {
         super.loadView()
-        CrashlyticsHelper.log()
+        CrashlyticsHelper.log("Rule index: \(rule?.index ?? "ERROR")")
 
         // Show the navigation bar with the rule name
         setUpNavBar(withTitle: rule?.name ?? NSLocalizedString("error", comment: "Error"))
 
         // Set the content label if there are no subsections
+        // TODO: - somehow test this...?
         if rule?.subsections?.isEmpty ?? true, let markdownText = rule?.desc {
             contentLabel.attributedText = SwiftyMarkdown(string: markdownText, maxImageWidth: view.width * 0.9).applyDefaultFormatting(color: .text).attributedString()
         }

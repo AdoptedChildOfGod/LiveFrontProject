@@ -18,6 +18,8 @@ class NoInternetViewController: BaseViewController {
 
     /// Check to see if the internet connection is back
     @objc private func refreshButtonTapped() {
+        // TODO: - test button tap?
+
         // Spin the button so that the user knows something is happening
         refreshButton.rotate360Degrees(duration: 0.4)
 
@@ -42,6 +44,7 @@ class NoInternetViewController: BaseViewController {
     /// The label
     private let noInternetLabel = UILabel(NSLocalizedString("no_internet", comment: "No internet connection message"), alignment: .center, autoResize: false)
     /// The refresh button
+    // TODO: - make accessible
     private let refreshButton = UIButton("", image: .refresh.withTintColor(.text), action: #selector(refreshButtonTapped))
 
     // MARK: - Set Up UI
