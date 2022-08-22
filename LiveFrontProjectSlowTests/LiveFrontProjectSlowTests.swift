@@ -50,6 +50,30 @@ class LiveFrontProjectSlowTests: XCTestCase {
         XCTAssertNil(errorMessage)
     }
 
+    /// Test that error handling works correctly
+    func testLoadingBadDataHandledCorrectly() throws {
+        // Check for internet
+        try XCTSkipUnless(Reachability().isReachable, "Network connectivity needed for this test.")
+
+        // Create the promise
+        let promise = expectation(description: "Error handled as expected")
+        var errorMessage: CustomError?
+
+        // Try to fetch a specific rule
+        ruleController.fetchRule(withIndex: "spellcasting", andURL: "/api/rules/spellcasting/BAD-URL") { result in
+            switch result {
+            case .success: XCTFail("Data returned for some reason??")
+            case let .failure(error): errorMessage = error
+            }
+
+            promise.fulfill()
+        }
+
+        // Wait for the results
+        wait(for: [promise], timeout: 2)
+        XCTAssertNotNil(errorMessage)
+    }
+
     /// Test that loading a specific rule works correctly
     func testLoadingSpecificRuleWorks() throws {
         // Check for internet
