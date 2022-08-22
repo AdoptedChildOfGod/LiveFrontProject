@@ -44,7 +44,6 @@ class NoInternetViewController: BaseViewController {
     /// The label
     private let noInternetLabel = UILabel(NSLocalizedString("no_internet", comment: "No internet connection message"), alignment: .center, autoResize: false)
     /// The refresh button
-    // TODO: - make accessible
     private let refreshButton = UIButton("", image: .refresh.withTintColor(.text), action: #selector(refreshButtonTapped))
 
     // MARK: - Set Up UI
@@ -65,5 +64,7 @@ class NoInternetViewController: BaseViewController {
 
         // The refresh button
         refreshButton.anchor(aspectRatio: 1, size: 32)
+        refreshButton.accessibilityLabel = NSLocalizedString("refresh", comment: "Refresh label")
+        refreshButton.accessibilityHint = NSLocalizedString("refresh_hint", comment: "Refresh label accessibility hint")
     }
 }
