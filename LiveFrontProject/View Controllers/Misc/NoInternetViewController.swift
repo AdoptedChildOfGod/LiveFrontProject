@@ -18,8 +18,6 @@ class NoInternetViewController: BaseViewController {
 
     /// Check to see if the internet connection is back
     @objc private func refreshButtonTapped() {
-        // TODO: - test button tap?
-
         // Spin the button so that the user knows something is happening
         refreshButton.rotate360Degrees(duration: 0.4)
 

@@ -24,7 +24,6 @@ class DetailViewController: BaseViewController {
         setUpNavBar(withTitle: rule?.name ?? NSLocalizedString("error", comment: "Error"))
 
         // Set the content label if there are no subsections
-        // TODO: - somehow test this...?
         if rule?.subsections?.isEmpty ?? true, let markdownText = rule?.desc {
             contentLabel.load(markdown: markdownText, enableImage: false, css: css)
         }
